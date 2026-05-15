@@ -1,0 +1,718 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FEELV — Feel Vlone · bOYz Lyf£</title>
+  <meta name="description" content="Feel Vlone (FEELV) — rap alternatif, mélancolie urbaine. Nouvel album bOYz Lyf£ — 1er juin 2026." />
+  <meta name="theme-color" content="#0a0a0a" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FEELV — bOYz Lyf£" />
+  <meta property="og:description" content="Nouvel album · 1er juin 2026" />
+  <meta property="og:type" content="music.album" />
+  <meta property="og:url" content="https://feelv.ch/" />
+
+  <link rel="stylesheet" href="styles.css" />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js" defer></script>
+</head>
+<body>
+
+  <!-- ============== NAV ============== -->
+  <nav class="nav">
+    <a href="#top" class="nav__logo">FEELV<span class="dot">·</span></a>
+    <div class="nav__links">
+      <a href="#album">Album</a>
+      <a href="#avib">A.VIB</a>
+      <a href="#discography">Discographie</a>
+      <a href="#stats">Stats</a>
+      <a href="press-kit/index.html">Press kit</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ============== HERO ============== -->
+  <header class="hero" id="top">
+    <img class="hero__bg" src="assets/bOYz Lyfe large format 2.png" alt="" aria-hidden="true" />
+    <canvas id="three-stage" aria-hidden="true"></canvas>
+    <div class="wrap">
+      <div class="hero__tagline">« À travers le monde, pour la culture » · <span class="red">#FEELV</span></div>
+      <div class="hero__meta">Album · sortie 01 — 06 — 2026</div>
+      <h1 class="hero__title">b<span class="accent">OY</span>z<br/>Lyf<span class="accent">£</span></h1>
+      <p class="hero__sub">Feel Vlone · singer / producer / beatmaker · biel-bienne, suisse</p>
+      <a class="hero__cta" href="#album">
+        Écouter le projet <span class="arrow">→</span>
+      </a>
+      <p class="hero__quote">« comme une impression d'être fait pour ça, un controle sur rien »</p>
+    </div>
+  </header>
+
+  <!-- ============== ALBUM ============== -->
+  <section id="album">
+    <div class="wrap">
+      <div class="section-label">01 — Le projet</div>
+
+      <div class="cover">
+        <div class="cover__img">
+          <img src="assets/cover-final.jpg" alt="bOYz Lyf£ — cover" />
+        </div>
+
+        <div class="cover__info">
+          <h2>15 titres.<br/><span class="red">6%</span> de sélection.</h2>
+          <p>265+ projets FL Studio créés sur 13 mois. 15 retenus. Entièrement autoproduit — prod, écriture, mix. Emo-rock × hip-hop : mélodies répétitives et mélancoliques, paroles introspectives, percussions agressives.</p>
+          <p class="muted" style="margin-top:16px;font-style:italic;">Sortie progressive — un nouveau titre toutes les deux semaines.</p>
+
+          <div class="progressive">
+            <img class="progressive__thumb" src="assets/cover-progressive.jpg" alt="bOYz Lyf£ — progressive release cover" />
+            <div class="progressive__meta">
+              <div class="progressive__label">Visuel · sorties progressives</div>
+              <div class="progressive__sub">Utilisé toute l'année 2025/2026 pour les drops bi-mensuels</div>
+            </div>
+          </div>
+
+          <dl class="cover__stats">
+            <dt>Sortie</dt>          <dd>01 juin 2026</dd>
+            <dt>Distribution</dt>    <dd>DistroKid</dd>
+            <dt>Format</dt>          <dd>Streaming · digital</dd>
+            <dt>Plateformes</dt>     <dd>Spotify · Apple · Deezer · YT</dd>
+          </dl>
+        </div>
+      </div>
+
+      <!-- ============== TRACKLIST (16 tracks, ordre album v3) ============== -->
+      <div class="tracklist">
+        <div class="track track--has-fiche" data-slug="lastfeeling">
+          <span class="track__num">01</span>
+          <span class="track__title">LastfEeliNg — pOurTOi</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/lastfeeling.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="samelyfe">
+          <span class="track__num">02</span>
+          <span class="track__title">sAMeLyFe</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/samelyfe.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="alien">
+          <span class="track__num">03</span>
+          <span class="track__title">aLieN — h0okNswitCh</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/alien.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="vlonely-romance">
+          <span class="track__num">04</span>
+          <span class="track__title">vLonely rOmaNcE</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/vlonely-romance.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="fake-nightcrawler">
+          <span class="track__num">05</span>
+          <span class="track__title">fAke — niGHtCRawler</span>
+          <span></span>
+          <a class="track__link" href="sons/fake-nightcrawler.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="switch-hardwork">
+          <span class="track__num">06</span>
+          <span class="track__title">switCh — hARdw0rk_2</span>
+          <span></span>
+          <a class="track__link" href="sons/switch-hardwork.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="understand-me">
+          <span class="track__num">07</span>
+          <span class="track__title">uNDErstAND mE</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/understand-me.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="crazyrevenge-sanstoi">
+          <span class="track__num">08</span>
+          <span class="track__title">craZyrevenGe — $aNStOi</span>
+          <span></span>
+          <a class="track__link" href="sons/crazyrevenge-sanstoi.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="mieux-sanstoi">
+          <span class="track__num">09</span>
+          <span class="track__title">miEUx — $aNstOi</span>
+          <span></span>
+          <a class="track__link" href="sons/mieux-sanstoi.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="inception">
+          <span class="track__num">10</span>
+          <span class="track__title">iNCeptiON</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/inception.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="sensation-mortsure">
+          <span class="track__num">11</span>
+          <span class="track__title">seNSation — m0®†$ure</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/sensation-mortsure.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="fent">
+          <span class="track__num">12</span>
+          <span class="track__title">fENt</span>
+          <span></span>
+          <a class="track__link" href="sons/fent.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="chromeheart">
+          <span class="track__num">13</span>
+          <span class="track__title">chrOmeHeaRt</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/chromeheart.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="kill">
+          <span class="track__num">14</span>
+          <span class="track__title">kiLL — riDer</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/kill.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="toi-ou-moi">
+          <span class="track__num">15</span>
+          <span class="track__title">tOi OU Moi</span>
+          <span></span>
+          <a class="track__link" href="sons/toi-ou-moi.html">A.VIB →</a>
+        </div>
+        <div class="track track--has-fiche" data-slug="hateme">
+          <span class="track__num">16</span>
+          <span class="track__title">hAtemE</span>
+          <span class="track__single">Single</span>
+          <a class="track__link" href="sons/hateme.html">A.VIB →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== A.VIB ============== -->
+  <section id="avib">
+    <div class="wrap">
+      <div class="section-label">02 — Analyses A.VIB</div>
+      <h2>Lecture vibratoire de chaque son<br/>selon l'échelle de <span class="red">Hawkins</span>.</h2>
+      <p class="muted" style="max-width:600px;margin-top:20px;">Concept propriétaire FEELV. Chaque morceau est scanné sur l'échelle Power vs Force (0–1000) — la fréquence émotionnelle dominante au moment de la composition.</p>
+
+      <!-- ============== TRAJECTORY GRAPH ============== -->
+      <div class="avib-graph">
+        <div class="avib-graph__caption">
+          <span>Trajectoire de l'album · 16 tracks</span>
+          <span class="muted">— passe la souris ou tape pour voir le détail · clic = fiche A.VIB</span>
+        </div>
+<svg viewBox="0 0 1240 480" xmlns="http://www.w3.org/2000/svg" class="avib-graph__svg" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Trajectoire A.VIB de bOYz Lyf£">
+  <g class="avib-graph__refs">
+    <line x1="80" y1="100.0" x2="1160" y2="100.0" />
+    <text class="avib-graph__refnum"   x="66" y="104.0">200</text>
+    <text class="avib-graph__reflabel" x="66" y="118.0">Courage</text>
+    <line x1="80" y1="150.0" x2="1160" y2="150.0" />
+    <text class="avib-graph__refnum"   x="66" y="154.0">175</text>
+    <text class="avib-graph__reflabel" x="66" y="168.0">Fierté</text>
+    <line x1="80" y1="200.0" x2="1160" y2="200.0" />
+    <text class="avib-graph__refnum"   x="66" y="204.0">150</text>
+    <text class="avib-graph__reflabel" x="66" y="218.0">Colère</text>
+    <line x1="80" y1="250.0" x2="1160" y2="250.0" />
+    <text class="avib-graph__refnum"   x="66" y="254.0">125</text>
+    <text class="avib-graph__reflabel" x="66" y="268.0">Désir</text>
+    <line x1="80" y1="300.0" x2="1160" y2="300.0" />
+    <text class="avib-graph__refnum"   x="66" y="304.0">100</text>
+    <text class="avib-graph__reflabel" x="66" y="318.0">Peur</text>
+    <line x1="80" y1="350.0" x2="1160" y2="350.0" />
+    <text class="avib-graph__refnum"   x="66" y="354.0">75</text>
+    <text class="avib-graph__reflabel" x="66" y="368.0">Chagrin</text>
+    <line x1="80" y1="400.0" x2="1160" y2="400.0" />
+    <text class="avib-graph__refnum"   x="66" y="404.0">50</text>
+    <text class="avib-graph__reflabel" x="66" y="418.0">Apathie</text>
+  </g>
+  <polyline class="avib-graph__line" points="80.0,350.0 152.0,150.0 224.0,350.0 296.0,300.0 368.0,200.0 440.0,200.0 512.0,350.0 584.0,200.0 656.0,350.0 728.0,350.0 800.0,250.0 872.0,350.0 944.0,150.0 1016.0,200.0 1088.0,200.0 1160.0,250.0" />
+  <g class="avib-graph__tracks">
+    <a href="sons/lastfeeling.html">
+      <title>01 · LastfEeliNg — 75 (75→125)</title>
+      <line class="avib-graph__range" x1="80.0" y1="250.0" x2="80.0" y2="350.0" />
+      <line class="avib-graph__cap"   x1="76.0" y1="250.0" x2="84.0" y2="250.0" />
+      <line class="avib-graph__cap"   x1="76.0" y1="350.0" x2="84.0" y2="350.0" />
+      <circle class="avib-graph__dot" cx="80.0" cy="350.0" r="6" />
+      <text class="avib-graph__num"   x="80.0" y="426.0">01</text>
+      <text class="avib-graph__label" x="80.0" y="442.0">LastfEeliNg</text>
+    </a>
+    <a href="sons/samelyfe.html">
+      <title>02 · sAMeLyFe — 175 (150→200)</title>
+      <line class="avib-graph__range" x1="152.0" y1="100.0" x2="152.0" y2="200.0" />
+      <line class="avib-graph__cap"   x1="148.0" y1="100.0" x2="156.0" y2="100.0" />
+      <line class="avib-graph__cap"   x1="148.0" y1="200.0" x2="156.0" y2="200.0" />
+      <circle class="avib-graph__dot" cx="152.0" cy="150.0" r="6" />
+      <text class="avib-graph__num"   x="152.0" y="426.0">02</text>
+      <text class="avib-graph__label" x="152.0" y="442.0">sAMeLyFe</text>
+    </a>
+    <a href="sons/alien.html">
+      <title>03 · aLieN — 75 (75→175)</title>
+      <line class="avib-graph__range" x1="224.0" y1="150.0" x2="224.0" y2="350.0" />
+      <line class="avib-graph__cap"   x1="220.0" y1="150.0" x2="228.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="220.0" y1="350.0" x2="228.0" y2="350.0" />
+      <circle class="avib-graph__dot" cx="224.0" cy="350.0" r="6" />
+      <text class="avib-graph__num"   x="224.0" y="426.0">03</text>
+      <text class="avib-graph__label" x="224.0" y="442.0">aLieN</text>
+    </a>
+    <a href="sons/vlonely-romance.html">
+      <title>04 · vLonely — 100 (75→175)</title>
+      <line class="avib-graph__range" x1="296.0" y1="150.0" x2="296.0" y2="350.0" />
+      <line class="avib-graph__cap"   x1="292.0" y1="150.0" x2="300.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="292.0" y1="350.0" x2="300.0" y2="350.0" />
+      <circle class="avib-graph__dot" cx="296.0" cy="300.0" r="6" />
+      <text class="avib-graph__num"   x="296.0" y="426.0">04</text>
+      <text class="avib-graph__label" x="296.0" y="442.0">vLonely</text>
+    </a>
+    <a href="sons/fake-nightcrawler.html">
+      <title>05 · fAke — 150 (100→175)</title>
+      <line class="avib-graph__range" x1="368.0" y1="150.0" x2="368.0" y2="300.0" />
+      <line class="avib-graph__cap"   x1="364.0" y1="150.0" x2="372.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="364.0" y1="300.0" x2="372.0" y2="300.0" />
+      <circle class="avib-graph__dot" cx="368.0" cy="200.0" r="6" />
+      <text class="avib-graph__num"   x="368.0" y="426.0">05</text>
+      <text class="avib-graph__label" x="368.0" y="442.0">fAke</text>
+    </a>
+    <a href="sons/switch-hardwork.html">
+      <title>06 · switCh — 150 (125→175)</title>
+      <line class="avib-graph__range" x1="440.0" y1="150.0" x2="440.0" y2="250.0" />
+      <line class="avib-graph__cap"   x1="436.0" y1="150.0" x2="444.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="436.0" y1="250.0" x2="444.0" y2="250.0" />
+      <circle class="avib-graph__dot" cx="440.0" cy="200.0" r="6" />
+      <text class="avib-graph__num"   x="440.0" y="426.0">06</text>
+      <text class="avib-graph__label" x="440.0" y="442.0">switCh</text>
+    </a>
+    <a href="sons/understand-me.html">
+      <title>07 · uNDErstAND — 75 (50→100)</title>
+      <line class="avib-graph__range" x1="512.0" y1="300.0" x2="512.0" y2="400.0" />
+      <line class="avib-graph__cap"   x1="508.0" y1="300.0" x2="516.0" y2="300.0" />
+      <line class="avib-graph__cap"   x1="508.0" y1="400.0" x2="516.0" y2="400.0" />
+      <circle class="avib-graph__dot" cx="512.0" cy="350.0" r="6" />
+      <text class="avib-graph__num"   x="512.0" y="426.0">07</text>
+      <text class="avib-graph__label" x="512.0" y="442.0">uNDErstAND</text>
+    </a>
+    <a href="sons/crazyrevenge-sanstoi.html">
+      <title>08 · craZyrevenGe — 150 (50→175)</title>
+      <line class="avib-graph__range" x1="584.0" y1="150.0" x2="584.0" y2="400.0" />
+      <line class="avib-graph__cap"   x1="580.0" y1="150.0" x2="588.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="580.0" y1="400.0" x2="588.0" y2="400.0" />
+      <circle class="avib-graph__dot" cx="584.0" cy="200.0" r="6" />
+      <text class="avib-graph__num"   x="584.0" y="426.0">08</text>
+      <text class="avib-graph__label" x="584.0" y="442.0">craZyrevenGe</text>
+    </a>
+    <a href="sons/mieux-sanstoi.html">
+      <title>09 · miEUx — 75 (50→100)</title>
+      <line class="avib-graph__range" x1="656.0" y1="300.0" x2="656.0" y2="400.0" />
+      <line class="avib-graph__cap"   x1="652.0" y1="300.0" x2="660.0" y2="300.0" />
+      <line class="avib-graph__cap"   x1="652.0" y1="400.0" x2="660.0" y2="400.0" />
+      <circle class="avib-graph__dot" cx="656.0" cy="350.0" r="6" />
+      <text class="avib-graph__num"   x="656.0" y="426.0">09</text>
+      <text class="avib-graph__label" x="656.0" y="442.0">miEUx</text>
+    </a>
+    <a href="sons/inception.html">
+      <title>10 · iNCeptiON — 75 (75→125)</title>
+      <line class="avib-graph__range" x1="728.0" y1="250.0" x2="728.0" y2="350.0" />
+      <line class="avib-graph__cap"   x1="724.0" y1="250.0" x2="732.0" y2="250.0" />
+      <line class="avib-graph__cap"   x1="724.0" y1="350.0" x2="732.0" y2="350.0" />
+      <circle class="avib-graph__dot" cx="728.0" cy="350.0" r="6" />
+      <text class="avib-graph__num"   x="728.0" y="426.0">10</text>
+      <text class="avib-graph__label" x="728.0" y="442.0">iNCeptiON</text>
+    </a>
+    <a href="sons/sensation-mortsure.html">
+      <title>11 · seNSation — 125 (75→175)</title>
+      <line class="avib-graph__range" x1="800.0" y1="150.0" x2="800.0" y2="350.0" />
+      <line class="avib-graph__cap"   x1="796.0" y1="150.0" x2="804.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="796.0" y1="350.0" x2="804.0" y2="350.0" />
+      <circle class="avib-graph__dot" cx="800.0" cy="250.0" r="6" />
+      <text class="avib-graph__num"   x="800.0" y="426.0">11</text>
+      <text class="avib-graph__label" x="800.0" y="442.0">seNSation</text>
+    </a>
+    <a href="sons/fent.html">
+      <title>12 · fENt — 75 (50→100)</title>
+      <line class="avib-graph__range" x1="872.0" y1="300.0" x2="872.0" y2="400.0" />
+      <line class="avib-graph__cap"   x1="868.0" y1="300.0" x2="876.0" y2="300.0" />
+      <line class="avib-graph__cap"   x1="868.0" y1="400.0" x2="876.0" y2="400.0" />
+      <circle class="avib-graph__dot" cx="872.0" cy="350.0" r="6" />
+      <text class="avib-graph__num"   x="872.0" y="426.0">12</text>
+      <text class="avib-graph__label" x="872.0" y="442.0">fENt</text>
+    </a>
+    <a href="sons/chromeheart.html">
+      <title>13 · chrOmeHeaRt — 175 (75→200)</title>
+      <line class="avib-graph__range" x1="944.0" y1="100.0" x2="944.0" y2="350.0" />
+      <line class="avib-graph__cap"   x1="940.0" y1="100.0" x2="948.0" y2="100.0" />
+      <line class="avib-graph__cap"   x1="940.0" y1="350.0" x2="948.0" y2="350.0" />
+      <circle class="avib-graph__dot" cx="944.0" cy="150.0" r="6" />
+      <text class="avib-graph__num"   x="944.0" y="426.0">13</text>
+      <text class="avib-graph__label" x="944.0" y="442.0">chrOmeHeaRt</text>
+    </a>
+    <a href="sons/kill.html">
+      <title>14 · kiLL — 150 (100→175)</title>
+      <line class="avib-graph__range" x1="1016.0" y1="150.0" x2="1016.0" y2="300.0" />
+      <line class="avib-graph__cap"   x1="1012.0" y1="150.0" x2="1020.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="1012.0" y1="300.0" x2="1020.0" y2="300.0" />
+      <circle class="avib-graph__dot" cx="1016.0" cy="200.0" r="6" />
+      <text class="avib-graph__num"   x="1016.0" y="426.0">14</text>
+      <text class="avib-graph__label" x="1016.0" y="442.0">kiLL</text>
+    </a>
+    <a href="sons/toi-ou-moi.html">
+      <title>15 · tOi OU Moi — 150 (75→175)</title>
+      <line class="avib-graph__range" x1="1088.0" y1="150.0" x2="1088.0" y2="350.0" />
+      <line class="avib-graph__cap"   x1="1084.0" y1="150.0" x2="1092.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="1084.0" y1="350.0" x2="1092.0" y2="350.0" />
+      <circle class="avib-graph__dot" cx="1088.0" cy="200.0" r="6" />
+      <text class="avib-graph__num"   x="1088.0" y="426.0">15</text>
+      <text class="avib-graph__label" x="1088.0" y="442.0">tOi OU Moi</text>
+    </a>
+    <a href="sons/hateme.html">
+      <title>16 · hAtemE — 125 (100→175)</title>
+      <line class="avib-graph__range" x1="1160.0" y1="150.0" x2="1160.0" y2="300.0" />
+      <line class="avib-graph__cap"   x1="1156.0" y1="150.0" x2="1164.0" y2="150.0" />
+      <line class="avib-graph__cap"   x1="1156.0" y1="350.0" x2="1164.0" y2="300.0" />
+      <circle class="avib-graph__dot" cx="1160.0" cy="250.0" r="6" />
+      <text class="avib-graph__num"   x="1160.0" y="426.0">16</text>
+      <text class="avib-graph__label" x="1160.0" y="442.0">hAtemE</text>
+    </a>
+  </g>
+</svg>
+      </div>
+
+      <div class="avib-grid">
+        <a class="avib-card" href="sons/lastfeeling.html">
+          <div class="avib-card__num">01</div>
+          <div class="avib-card__title">LastfEeliNg</div>
+          <div class="avib-card__level">75</div>
+          <div class="avib-card__emotion">Chagrin · 75 → 125</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/samelyfe.html">
+          <div class="avib-card__num">02</div>
+          <div class="avib-card__title">sAMeLyFe</div>
+          <div class="avib-card__level">175</div>
+          <div class="avib-card__emotion">Fierté · 150 → 200</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/kill-rider.html">
+          <div class="avib-card__num">03</div>
+          <div class="avib-card__title">kiLL — riDer</div>
+          <div class="avib-card__level">150</div>
+          <div class="avib-card__emotion">Colère · 100 → 175</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/sensation-mortsure.html">
+          <div class="avib-card__num">04</div>
+          <div class="avib-card__title">seNSation — m0®†$ure</div>
+          <div class="avib-card__level">125</div>
+          <div class="avib-card__emotion">Désir · 75 → 175</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/nightcrawler.html">
+          <div class="avib-card__num">05</div>
+          <div class="avib-card__title">niGHtCRawler</div>
+          <div class="avib-card__level">150</div>
+          <div class="avib-card__emotion">Colère · 100 → 175</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/inception.html">
+          <div class="avib-card__num">06</div>
+          <div class="avib-card__title">iNCeptiON</div>
+          <div class="avib-card__level">75</div>
+          <div class="avib-card__emotion">Chagrin · 75 → 125</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/crazyrevenge-sanstoi.html">
+          <div class="avib-card__num">07</div>
+          <div class="avib-card__title">craZyrevenGe</div>
+          <div class="avib-card__level">—</div>
+          <div class="avib-card__emotion">Lyrics en attente</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/tuferaismieux-sanstoi.html">
+          <div class="avib-card__num">08</div>
+          <div class="avib-card__title">tuFeraisMieux</div>
+          <div class="avib-card__level">75</div>
+          <div class="avib-card__emotion">Chagrin · 50 → 100</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/vlonely-romance.html">
+          <div class="avib-card__num">09</div>
+          <div class="avib-card__title">vLonely rOmaNcE</div>
+          <div class="avib-card__level">100</div>
+          <div class="avib-card__emotion">Peur · 75 → 175</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/fent.html">
+          <div class="avib-card__num">10</div>
+          <div class="avib-card__title">fENt</div>
+          <div class="avib-card__level">75</div>
+          <div class="avib-card__emotion">Chagrin · 50 → 100</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/chromeheart.html">
+          <div class="avib-card__num">11</div>
+          <div class="avib-card__title">chrOmeHeaRt</div>
+          <div class="avib-card__level">175</div>
+          <div class="avib-card__emotion">Fierté · 75 → 200</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/weshsi-hardwork.html">
+          <div class="avib-card__num">12</div>
+          <div class="avib-card__title">weshSi — hARdw0rk</div>
+          <div class="avib-card__level">150</div>
+          <div class="avib-card__emotion">Colère · 125 → 175</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/toi-ou-moi.html">
+          <div class="avib-card__num">13</div>
+          <div class="avib-card__title">tOi OU Moi</div>
+          <div class="avib-card__level">150</div>
+          <div class="avib-card__emotion">Colère · 75 → 175</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/understand-me.html">
+          <div class="avib-card__num">14</div>
+          <div class="avib-card__title">uNDErstAND mE</div>
+          <div class="avib-card__level">75</div>
+          <div class="avib-card__emotion">Chagrin · 50 → 100</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+        <a class="avib-card" href="sons/alien.html">
+          <div class="avib-card__num">15</div>
+          <div class="avib-card__title">aLieN</div>
+          <div class="avib-card__level">75</div>
+          <div class="avib-card__emotion">Chagrin · 75 → 175</div>
+          <div class="avib-card__arrow">↗</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== INTERLUDE — PORTRAIT ============== -->
+  <section class="interlude" aria-hidden="true">
+    <img class="interlude__img" src="assets/feelvlone-character.jpg" alt="" />
+    <div class="interlude__overlay">
+      <div class="wrap">
+        <p class="interlude__quote">« Embrace your destiny »</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== DISCOGRAPHY ============== -->
+  <section id="discography">
+    <div class="wrap">
+      <div class="section-label">03 — Discographie</div>
+      <h2>Six projets.<br/><span class="red">Une trajectoire.</span></h2>
+
+      <ul class="discog">
+        <li class="discog__item discog__item--current">
+          <span class="discog__year">2026</span>
+          <span class="discog__title">bOYz Lyf£</span>
+          <span class="discog__tag">À venir · 01.06.2026</span>
+        </li>
+        <li class="discog__item">
+          <span class="discog__year">2025</span>
+          <span class="discog__title">Fallen Angels</span>
+          <span class="discog__tag">Album</span>
+        </li>
+        <li class="discog__item">
+          <span class="discog__year">2024</span>
+          <span class="discog__title">Wockstar</span>
+          <span class="discog__tag">Album</span>
+        </li>
+        <li class="discog__item">
+          <span class="discog__year">2023</span>
+          <span class="discog__title">Final Dest</span>
+          <span class="discog__tag">Album</span>
+        </li>
+        <li class="discog__item">
+          <span class="discog__year">2022</span>
+          <span class="discog__title">Wolrd</span>
+          <span class="discog__tag">Album</span>
+        </li>
+        <li class="discog__item">
+          <span class="discog__year">2022</span>
+          <span class="discog__title">Vlonary</span>
+          <span class="discog__tag">Album</span>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============== STATS (gated) ============== -->
+  <section id="stats">
+    <div class="wrap">
+      <div class="section-label">04 — Spotify · avril/mai 2026</div>
+      <h2>Indépendant.<br/><span class="red">Organique.</span></h2>
+
+      <!-- =========== GATE (visible par défaut) =========== -->
+      <div class="gate" id="stats-gate" data-state="lock">
+
+        <!-- Étape 1 : invitation à follow -->
+        <div class="gate__panel gate__panel--lock">
+          <div class="gate__icon">◐</div>
+          <h3 class="gate__title">Stats réservées aux fans.</h3>
+          <p class="gate__sub">
+            Pour découvrir les chiffres derrière FEELV, suis-moi sur ta plateforme préférée.
+            Tu pourras ensuite débloquer la section.
+          </p>
+
+          <div class="gate__platforms">
+            <!-- TODO : remplacer les URLs par les pages artiste exactes une fois disponibles -->
+            <a class="gate__platform gate__platform--spotify"
+               href="https://open.spotify.com/search/Feel%20Vlone"
+               target="_blank" rel="noopener"
+               data-platform="spotify">
+              <span class="gate__platform-name">Spotify</span>
+              <span class="gate__platform-action">Suivre ↗</span>
+            </a>
+            <a class="gate__platform gate__platform--apple"
+               href="https://music.apple.com/search?term=Feel%20Vlone"
+               target="_blank" rel="noopener"
+               data-platform="apple">
+              <span class="gate__platform-name">Apple Music</span>
+              <span class="gate__platform-action">Suivre ↗</span>
+            </a>
+            <a class="gate__platform gate__platform--deezer"
+               href="https://www.deezer.com/search/Feel%20Vlone"
+               target="_blank" rel="noopener"
+               data-platform="deezer">
+              <span class="gate__platform-name">Deezer</span>
+              <span class="gate__platform-action">Suivre ↗</span>
+            </a>
+          </div>
+
+          <button class="gate__claim" data-action="claim">
+            Je suis déjà abonné →
+          </button>
+
+          <p class="gate__note">
+            ◇ Vérification automatique via Spotify (OAuth) — bientôt disponible.
+          </p>
+        </div>
+
+        <!-- Étape 2 : confirmation (honor system) -->
+        <div class="gate__panel gate__panel--confirm" hidden>
+          <div class="gate__icon">◑</div>
+          <h3 class="gate__title">Sur quelle plateforme me suis-tu ?</h3>
+          <p class="gate__sub">
+            Sélectionne où tu m'écoutes — pour cette session, ta réponse débloque les stats.
+            (Vérification automatique en V2.)
+          </p>
+
+          <div class="gate__platforms">
+            <button class="gate__platform" data-confirm="spotify">
+              <span class="gate__platform-name">Spotify</span>
+              <span class="gate__platform-action">Confirmer →</span>
+            </button>
+            <button class="gate__platform" data-confirm="apple">
+              <span class="gate__platform-name">Apple Music</span>
+              <span class="gate__platform-action">Confirmer →</span>
+            </button>
+            <button class="gate__platform" data-confirm="deezer">
+              <span class="gate__platform-name">Deezer</span>
+              <span class="gate__platform-action">Confirmer →</span>
+            </button>
+          </div>
+
+          <button class="gate__claim gate__claim--back" data-action="back">← Retour</button>
+        </div>
+      </div>
+
+      <!-- =========== CONTENU stats (révélé après gate) =========== -->
+      <div class="gate__content" id="stats-content" hidden>
+        <div class="gate__badge">
+          <span class="gate__badge-icon">●</span>
+          <span class="gate__badge-text">Vérifié — fan <span id="gate-platform-label">FEELV</span></span>
+          <button class="gate__reset" data-action="reset" title="Quitter le mode fan">×</button>
+        </div>
+
+        <div class="stats">
+          <div class="stat">
+            <div class="stat__value">36</div>
+            <div class="stat__label">Listeners / mois</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">366</div>
+            <div class="stat__label">Streams / 28 jours</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">19</div>
+            <div class="stat__label">Followers</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">400+</div>
+            <div class="stat__label">Listeners all-time</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">70+</div>
+            <div class="stat__label">Titres distribués</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">265+</div>
+            <div class="stat__label">Projets FL créés</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">56%</div>
+            <div class="stat__label">Via playlists users</div>
+          </div>
+          <div class="stat">
+            <div class="stat__value">6%</div>
+            <div class="stat__label">Taux de sélection</div>
+          </div>
+        </div>
+
+        <p class="muted" style="margin-top:40px;max-width:700px;">
+          Audience 68% Male / 27% Female · 51% âgés 25–34 ans · 56% découverte via playlists utilisateurs.<br/>
+          Top pays : Nigeria · Suisse · Italie · Congo · Afrique du Sud.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CREDITS ============== -->
+  <section id="credits">
+    <div class="wrap">
+      <div class="section-label">05 — Crew</div>
+      <h2>L'<span class="red">équipe</span> derrière FEELV.</h2>
+
+      <div class="credits-grid">
+        <div class="credit">
+          <div class="credit__role">Singer / Producer / Beatmaker</div>
+          <div class="credit__name">Térence-Michel Bidima</div>
+          <div class="credit__alias">aka Feel Vlone · FEELV</div>
+        </div>
+        <div class="credit">
+          <div class="credit__role">Artistic Direction</div>
+          <div class="credit__name">Byron Vlone</div>
+        </div>
+        <div class="credit">
+          <div class="credit__role">Styling</div>
+          <div class="credit__name">howDoUfeel</div>
+        </div>
+        <div class="credit">
+          <div class="credit__role">Management</div>
+          <div class="credit__name">Ibrahim Koti</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== CONTACT ============== -->
+  <section id="contact" class="contact">
+    <div class="wrap">
+      <div class="section-label" style="justify-content:center;">06 — Contact</div>
+      <h2>Booking · Press · <span class="red">Collabs</span></h2>
+      <a class="contact__email" href="mailto:central.feelv@gmail.com">central.feelv@gmail.com</a>
+      <a class="contact__email" href="mailto:terence.feelv@gmail.com">terence.feelv@gmail.com</a>
+      <a class="contact__email" href="https://instagram.com/feel.vlone" target="_blank" rel="noopener">@feel.vlone · Instagram ↗</a>
+      <a class="hero__cta" href="press-kit/index.html" style="margin-top:32px;">
+        Télécharger le press kit <span class="arrow">↓</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ============== FOOTER ============== -->
+  <footer class="foot">
+    <div>© 2026 FEELV · Feel Vlone · Biel-Bienne, CH · « Embrace your destiny »</div>
+    <div class="foot__tags">
+      <span>#feELv</span>
+      <span>#bOYzLyfe</span>
+      <span>#feelVlone</span>
+      <span>#FEELV</span>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

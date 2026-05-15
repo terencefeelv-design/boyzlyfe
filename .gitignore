@@ -1,0 +1,22 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+
+# Editors
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+Thumbs.db
+
+# Alias files (macOS-specific)
+*alias
+
+# HD assets — version optimisée déjà committée
+# (décommente si tu veux exclure les sources PSD lourdes)
+# *.psd
