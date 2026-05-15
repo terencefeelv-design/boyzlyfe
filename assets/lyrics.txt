@@ -236,70 +236,44 @@ Mes pirates autotunés chantent pour faire twerker des renes-Si, yea
 
 
 
-{kiLL
 
-Ils ne sauront jamais se remettre à ma place
-Deux comme moi, jamais t’en verra dans cette lyfe
-Non jamais, t’en verra dans cette lyfe 
-Deux comme moi, non jamais t’en verra dans cette lyfe 
+{switCh
 
-À moins que ce soit mon ying, à moins que ce soit mon ying
-Dans ce cas faudrait que j’le tue, j’pourrais pas te laisser vivre
-C’est toi ou moi faudrait que j’te kill
-C’est toi ou moi faut que j’te tue
-C’est toi ou moi faudrait que j’te kill 
-Blo’ yaurait pas de place pour nous deux
-C’est toi ou moins faudrait que j’te kill 
+Wesh si ça me blesse, wesh si ça me blesse, et si ça me blesse, j’frappe en retour
+Wesh si ça me blesse, ça me blesse, si ça me blesse, j’frappe plus fort
+
+Je n’ai pas le choix ni le droit de prendre sur moi
+Vu que tu t’en tapes de ce que je ressens
+Mais une fois trop tard, c’est mort
+Pas de retour en arrière, switch
+Et si ça me blesse, dans le silence, je me range? C’est mort, (non, non)
+Couvre-toi, je fou le feu, sur toi et le monde sans remords
 
 
-Regarde moi dans les yeux avant que tu t’en ailles
-Strangulation nous rapproche de la fin
-Gallery jean est plein de sang mais ce n’est pas le mien
-Puise que t’en a envie, j’suis prêt pour la guerre blood
+Je prends sur moi sans jamais me plaindre? c’est un mensonge
+Ces histoires sur moi j’en ai plein, mais je pourrai pas me justifier toute ma lyfe
+Vie de garçon j’suis en mission eh
+Je me sens pas si solo, je peux disquette une baddiz pour faire des bêtises
+Plusieurs addictions contrôlent mes envies et désirs
+Je suis bon qu’à chanter mes peines sur un flow autotuné
+Fais un peu plus attention quand tu t’adresses à moi, bitch je suis un rancunier 
 
-Biensur que j’suis pas un exemple à suivre mais j’baise des models que tu follows
-Jtire sur string ficelle, j’ken barbie sans jouer aux mario -le/nnettes yea
-Jtire sur string ficelle sans savoir jouer une seule note d’acoustique yea
-
-Médicaments quand j’suis flex ne me soignent pas mais bon j’suis bien ou je suis
-Mélange Sky et substances, j’ai besoin de prendre de la hauteur et me barrer d’ici 
-J’plus envie de voir mon reflet dans le goblet entrain de psychoter
-J’peux pas te laisser prendre le dessus parce que sinon c’est sure que j’vais y rester
-
-Donc je frappe encore plus fort et ce sang sur mes bagues, ce n’est pas contre toi
-C’est sois toi ou moi
-C’est soit toi ou moi
-Soit toi ou moi yea
+Je n’ai pas le droit ni le choix de prendre sur moi
+Mais une fois trop tard, c’est trop tard
+Après l’heure, ce n’est plus l’heure et
+Pas de retour en arrière non 
 
 
-Non jamais t’en reverra d’autre comme moi 
-Non jamais t’en reverra d’autre comme moi 
-Non jamais t’en reverra d’autre comme moi 
-Non jamais t’en reverra d’autre comme moi 
+Wesh si ça me blesse, wesh si ça me blesse, et si ça me blesse, j’frappe en retour
+Wesh si ça me blesse, ça me blesse, si ça me blesse, j’frappe plu fort
 
-Ils ne sauront jamais se remettre à ma place
-Deux comme moi, jamais t’en verra dans cette lyfe
-Non jamais, t’en verra dans cette lyfe 
-Deux comme moi, non jamais t’en verra dans cette lyfe 
+Je n’ai pas le choix ni le droit de prendre sur moi
+Vu que tu t’en tapes de ce que je ressens
+Mais une fois trop tard, c’est mort
+Pas de retour en arrière, switch
+Et si ça me blesse, dans le silence, je me range? C’est mort(nooo)
+Couvre-toi, je fou le feu, sur toi et le monde sans remords}
 
-À moins que ce soit mon ying, à moins que ce soit mon ying
-Dans ce cas faudrait que j’le tue, j’pourrais pas te laisser vivre
-C’est toi ou moi faudrait que j’te kill
-C’est toi ou moi faut que j’te tue
-C’est toi ou moi faudrait que j’te kill 
-Y'aura pas de place pour nous deux
-C’est toi ou moins faudrait que j’te kill 
-
-Faut que j’t’oublie si je compte — avancer, j’sais que si j’me rappel pourrai — jamais me soigner
-Aye aye — aye aye — Lady? — mayday
-J’imagine et j’peux donner vie — à mes visions
-Tu  m’appartiens quand j’le décides — je manifeste
-Non ils ne pourront jamais ressentir tout ce que je vie
-Y’aura pas assez de place pour nous deux — faut que j’te kiLL
-Aye aye — aye aye — Lady? — mayday
-
-Non jamais t’en reverra dans cette lyfe
-Deux comme moi non jamais t’en reverra dans cet te lyfe}
 
 
 {uNDErstAND*Me
@@ -346,6 +320,7 @@ Sauver cette terre ne me sauvera pas
 
 They ain't able to uNDErstAND*Me
 Cause you ain't able to uNDErstAND*Me}
+
 
 
 
@@ -493,6 +468,7 @@ Personne ne t’attendra à ton réveil donc reste avec moi
 
 
 
+
 {seNSatioN
 
 (J'crois qu'ça me suffit, j'en ai ma claque yeah)
@@ -540,6 +516,7 @@ J'créer des sensations, sometime, everyday-hé
 Et des sensations, sometime, yeah
 Ouais, j'suis comme personne j'appartiens aux aLieNs, éh-ya
 }
+
 
 
 
@@ -592,14 +569,14 @@ chrOme heArt quand je m’éteins
 Ras le bol de vivre plus longtemps dans la peur, non je crains plus la mort
 Devant la mort, je ressens plus aucune crainte
 Je peux voir dans le ciel, mon reflet, je peux voir dans ton regard mon reflet
-Je suis une étoile filante, je suis que de passage
+Je suis une étoile filante, j'fais que de passe n't'attache pas
 
 Piège, piège piège, 
 Je tomberai plus jamais dans le piège, 
 Dans ton regard ou l’espoir de te plaire
 Je suis sur wockstar rien à battre de ce qu’ils pensent de moi, ils savent rien faire
-Si je mouvrais, tu danserais sur les plaies
-Couteau, dans le dos, je suis habitué, j’encaisse
+Si je mouvrais, tu danserais sur mes plaies
+Couteau dans le dos, je suis habitué, j’encaisse
 J’espère que c’est réciproque pour toi en cas de Revenge
 
 Regarde-moi bien, j’suis esthétique,
@@ -620,46 +597,76 @@ chrOme heArt quand je m’éteins
 Ras le bol de vivre plus longtemps dans la peur, non je crains plus la mort
 Devant la mort, je ressens plus aucune crainte
 Je peux voir dans le ciel, mon reflet, je peux voir dans ton regard mon reflet
-Je suis une étoile filante, je suis que de passage}
+Je suis une étoile filante, j'fais que de passe n't'attache pas
+}
 
 
+{kiLL
 
-{switCh
+Ils ne sauront jamais se remettre à ma place
+Deux comme moi, jamais t’en verra dans cette lyfe
+Non jamais, t’en verra dans cette lyfe 
+Deux comme moi, non jamais t’en verra dans cette lyfe 
 
-Wesh si ça me blesse, wesh si ça me blesse, et si ça me blesse, j’frappe en retour
-Wesh si ça me blesse, ça me blesse, si ça me blesse, j’frappe plus fort
-
-Je n’ai pas le choix ni le droit de prendre sur moi
-Vu que tu t’en tapes de ce que je ressens
-Mais une fois trop tard, c’est mort
-Pas de retour en arrière, switch
-Et si ça me blesse, dans le silence, je me range? C’est mort, (non, non)
-Couvre-toi, je fou le feu, sur toi et le monde sans remords
-
-
-Je prends sur moi sans jamais me plaindre? c’est un mensonge
-Ces histoires sur moi j’en ai plein, mais je pourrai pas me justifier toute ma lyfe
-Vie de garçon j’suis en mission eh
-Je me sens pas si solo, je peux disquette une baddiz pour faire des bêtises
-Plusieurs addictions contrôlent mes envies et désirs
-Je suis bon qu’à chanter mes peines sur un flow autotuné
-Fais un peu plus attention quand tu t’adresses à moi, bitch je suis un rancunier 
-
-Je n’ai pas le droit ni le choix de prendre sur moi
-Mais une fois trop tard, c’est trop tard
-Après l’heure, ce n’est plus l’heure et
-Pas de retour en arrière non 
+À moins que ce soit mon ying, à moins que ce soit mon ying
+Dans ce cas faudrait que j’le tue, j’pourrais pas te laisser vivre
+C’est toi ou moi faudrait que j’te kill
+C’est toi ou moi faut que j’te tue
+C’est toi ou moi faudrait que j’te kill 
+Blo’ yaurait pas de place pour nous deux
+C’est toi ou moins faudrait que j’te kill 
 
 
-Wesh si ça me blesse, wesh si ça me blesse, et si ça me blesse, j’frappe en retour
-Wesh si ça me blesse, ça me blesse, si ça me blesse, j’frappe plu fort
+Regarde moi dans les yeux avant que tu t’en ailles
+Strangulation nous rapproche de la fin
+Gallery jean est plein de sang mais ce n’est pas le mien
+Puise que t’en a envie, j’suis prêt pour la guerre blood
 
-Je n’ai pas le choix ni le droit de prendre sur moi
-Vu que tu t’en tapes de ce que je ressens
-Mais une fois trop tard, c’est mort
-Pas de retour en arrière, switch
-Et si ça me blesse, dans le silence, je me range? C’est mort(nooo)
-Couvre-toi, je fou le feu, sur toi et le monde sans remords}
+Biensur que j’suis pas un exemple à suivre mais j’baise des models que tu follows
+Jtire sur string ficelle, j’ken barbie sans jouer aux mario -le/nnettes yea
+Jtire sur string ficelle sans savoir jouer une seule note d’acoustique yea
+
+Médicaments quand j’suis flex ne me soignent pas mais bon j’suis bien ou je suis
+Mélange Sky et substances, j’ai besoin de prendre de la hauteur et me barrer d’ici 
+J’plus envie de voir mon reflet dans le goblet entrain de psychoter
+J’peux pas te laisser prendre le dessus parce que sinon c’est sure que j’vais y rester
+
+Donc je frappe encore plus fort et ce sang sur mes bagues, ce n’est pas contre toi
+C’est sois toi ou moi
+C’est soit toi ou moi
+Soit toi ou moi yea
+
+
+Non jamais t’en reverra d’autre comme moi 
+Non jamais t’en reverra d’autre comme moi 
+Non jamais t’en reverra d’autre comme moi 
+Non jamais t’en reverra d’autre comme moi 
+
+Ils ne sauront jamais se remettre à ma place
+Deux comme moi, jamais t’en verra dans cette lyfe
+Non jamais, t’en verra dans cette lyfe 
+Deux comme moi, non jamais t’en verra dans cette lyfe 
+
+À moins que ce soit mon ying, à moins que ce soit mon ying
+Dans ce cas faudrait que j’le tue, j’pourrais pas te laisser vivre
+C’est toi ou moi faudrait que j’te kill
+C’est toi ou moi faut que j’te tue
+C’est toi ou moi faudrait que j’te kill 
+Y'aura pas de place pour nous deux
+C’est toi ou moins faudrait que j’te kill 
+
+Faut que j’t’oublie si je compte — avancer, j’sais que si j’me rappel pourrai — jamais me soigner
+Aye aye — aye aye — Lady? — mayday
+J’imagine et j’peux donner vie — à mes visions
+Tu  m’appartiens quand j’le décides — je manifeste
+Non ils ne pourront jamais ressentir tout ce que je vie
+Y’aura pas assez de place pour nous deux — faut que j’te kiLL
+Aye aye — aye aye — Lady? — mayday
+
+Non jamais t’en reverra dans cette lyfe
+Deux comme moi non jamais t’en reverra dans cet te lyfe}
+
+
 
 
 {tOi oU mOi
