@@ -14,7 +14,7 @@
   --c-red:       #D32F2F;
   --c-red-soft:  #8a1f1f;
 
-  --f-display: 'Bebas Neue', 'Arial Narrow', sans-serif;
+  --f-display: 'UnifrakturMaguntia', 'Bebas Neue', 'Arial Narrow', serif;
   --f-mono:    'DM Mono', 'Menlo', monospace;
 
   --w-max:     1200px;
@@ -160,6 +160,23 @@ section:first-of-type { border-top: 0; }
 .hero__meta,
 .hero__sub,
 .hero__quote { /* couleurs gérées par leurs règles d'origine */ }
+
+/* ---- Hero title : version image (logo blackletter custom) ---- */
+.hero__title--img {
+  /* on annule le font-size géant du h1 puisque c'est une image */
+  font-size: 0;
+  line-height: 0;
+  margin: 12px 0 24px;
+}
+
+.hero__title--img img {
+  display: block;
+  width: clamp(280px, 50vw, 640px);
+  height: auto;
+  /* léger glow rouge pour faire respirer le logo sur l'image bg */
+  filter: drop-shadow(0 4px 24px rgba(0,0,0,0.6))
+          drop-shadow(0 0 1px rgba(0,0,0,0.95));
+}
 
 .hero__tagline {
   font-family: var(--f-mono);
