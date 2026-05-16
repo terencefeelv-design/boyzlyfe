@@ -70,18 +70,18 @@
   const content = document.getElementById('stats-content');
 
   if (gate && content) {
-    const panelLock    = gate.querySelector('.gate__panel--lock');
+    const panelLock = gate.querySelector('.gate__panel--lock');
     const panelConfirm = gate.querySelector('.gate__panel--confirm');
     const platformLabel = document.getElementById('gate-platform-label');
 
     const PLATFORMS = {
       spotify: 'Spotify',
-      apple:   'Apple Music',
-      deezer:  'Deezer',
+      apple: 'Apple Music',
+      deezer: 'Deezer',
     };
 
     function unlock(platform) {
-      try { localStorage.setItem(GATE_KEY, platform); } catch (e) {}
+      try { localStorage.setItem(GATE_KEY, platform); } catch (e) { }
       if (platformLabel && PLATFORMS[platform]) {
         platformLabel.textContent = PLATFORMS[platform];
       }
@@ -90,7 +90,7 @@
     }
 
     function lock() {
-      try { localStorage.removeItem(GATE_KEY); } catch (e) {}
+      try { localStorage.removeItem(GATE_KEY); } catch (e) { }
       gate.hidden = false;
       content.hidden = true;
       // remet l'étape "lock" au premier plan
@@ -113,7 +113,7 @@
 
     // 1) au chargement : si l'user a déjà claim, on unlock direct
     let savedPlatform = null;
-    try { savedPlatform = localStorage.getItem(GATE_KEY); } catch (e) {}
+    try { savedPlatform = localStorage.getItem(GATE_KEY); } catch (e) { }
     if (savedPlatform && PLATFORMS[savedPlatform]) {
       unlock(savedPlatform);
     }
@@ -130,10 +130,20 @@
       }
       // 3) clic sur une plateforme de confirmation
       const confirmBtn = e.target.closest('[data-confirm]');
+
       if (confirmBtn) {
         e.preventDefault();
+
         const platform = confirmBtn.dataset.confirm;
-        unlock(platform);
+        const url = confirmBtn.getAttribute('href');
+
+        if (url) {
+          window.open(url, '_blank', 'noopener');
+        }
+
+        setTimeout(() => {
+          unlock(platform);
+        }, 1500);
       }
     });
 
@@ -184,10 +194,10 @@
     const velocities = new Float32Array(COUNT * 3);
 
     for (let i = 0; i < COUNT; i++) {
-      positions[i * 3]     = (Math.random() - 0.5) * 600;
+      positions[i * 3] = (Math.random() - 0.5) * 600;
       positions[i * 3 + 1] = (Math.random() - 0.5) * 400;
       positions[i * 3 + 2] = (Math.random() - 0.5) * 300;
-      velocities[i * 3]     = (Math.random() - 0.5) * 0.08;
+      velocities[i * 3] = (Math.random() - 0.5) * 0.08;
       velocities[i * 3 + 1] = (Math.random() - 0.5) * 0.05 + 0.02;
       velocities[i * 3 + 2] = (Math.random() - 0.5) * 0.08;
     }
@@ -232,17 +242,17 @@
       const pos = geom.attributes.position.array;
 
       for (let i = 0; i < COUNT; i++) {
-        pos[i * 3]     += velocities[i * 3];
+        pos[i * 3] += velocities[i * 3];
         pos[i * 3 + 1] += velocities[i * 3 + 1];
         pos[i * 3 + 2] += velocities[i * 3 + 2];
 
         // wrap around
-        if (pos[i * 3]     >  300) pos[i * 3]     = -300;
-        if (pos[i * 3]     < -300) pos[i * 3]     =  300;
-        if (pos[i * 3 + 1] >  200) pos[i * 3 + 1] = -200;
-        if (pos[i * 3 + 1] < -200) pos[i * 3 + 1] =  200;
-        if (pos[i * 3 + 2] >  150) pos[i * 3 + 2] = -150;
-        if (pos[i * 3 + 2] < -150) pos[i * 3 + 2] =  150;
+        if (pos[i * 3] > 300) pos[i * 3] = -300;
+        if (pos[i * 3] < -300) pos[i * 3] = 300;
+        if (pos[i * 3 + 1] > 200) pos[i * 3 + 1] = -200;
+        if (pos[i * 3 + 1] < -200) pos[i * 3 + 1] = 200;
+        if (pos[i * 3 + 2] > 150) pos[i * 3 + 2] = -150;
+        if (pos[i * 3 + 2] < -150) pos[i * 3 + 2] = 150;
       }
       geom.attributes.position.needsUpdate = true;
 
@@ -262,6 +272,10 @@
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
+
+      window.open(url, '_blank');
+
+
     }
     animate();
   }
