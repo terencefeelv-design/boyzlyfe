@@ -132,9 +132,6 @@
       const confirmBtn = e.target.closest('[data-confirm]');
 
       if (confirmBtn) {
-        e.preventDefault();
-
-        const platform = confirmBtn.dataset.confirm;
         const url = confirmBtn.getAttribute('href');
 
         if (url) {
@@ -272,10 +269,6 @@
 
       renderer.render(scene, camera);
       requestAnimationFrame(animate);
-
-      window.open(url, '_blank');
-
-
     }
     animate();
   }
