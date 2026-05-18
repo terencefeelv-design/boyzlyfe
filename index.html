@@ -38,12 +38,17 @@
   <nav class="nav">
     <a href="#top" class="nav__logo">FEELV<span class="dot">·</span></a>
     <div class="nav__links">
-      <a href="#album">Album</a>
-      <a href="#avib">A.VIB</a>
-      <a href="#discography">Discographie</a>
-      <a href="#stats">Stats</a>
-      <a href="press-kit/index.html">Press kit</a>
-      <a href="#contact">Contact</a>
+      <a href="#album" data-i18n="nav.album">Album</a>
+      <a href="#avib" data-i18n="nav.avib">A.VIB</a>
+      <a href="#discography" data-i18n="nav.discog">Discographie</a>
+      <a href="#stats" data-i18n="nav.stats">Stats</a>
+      <a href="press-kit/index.html" data-i18n="nav.presskit">Press kit</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+      <span class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="fr" aria-label="Français">FR</button>
+        <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
+        <button type="button" data-lang="en" aria-label="English">EN</button>
+      </span>
     </div>
   </nav>
 
@@ -52,23 +57,23 @@
     <img class="hero__bg" src="assets/bOYz Lyfe large format 2.png" alt="" aria-hidden="true" />
     <canvas id="three-stage" aria-hidden="true"></canvas>
     <div class="wrap">
-      <div class="hero__tagline">« À travers le monde, pour la culture » · <span class="red">#FEELV</span></div>
-      <div class="hero__meta">Pre-save 01 — 06 — 2026 · Drop 05 — 06 — 2026</div>
+      <div class="hero__tagline"><span data-i18n="hero.tagline.pre">« À travers le monde, pour la culture » · </span><span class="red">#FEELV</span></div>
+      <div class="hero__meta" data-i18n="hero.meta">Pre-save 01 — 06 — 2026 · Drop 05 — 06 — 2026</div>
       <h1 class="hero__title hero__title--img">
         <img src="assets/logo-boyz-lyfe.png" alt="bOYz Lyf£" />
       </h1>
-      <p class="hero__sub">Feel Vlone · singer / producer / beatmaker · biel-bienne, suisse</p>
+      <p class="hero__sub" data-i18n="hero.sub">Feel Vlone · singer / producer / beatmaker · biel-bienne, suisse</p>
       <a class="hero__cta" href="#album">
-        Écouter le projet <span class="arrow">→</span>
+        <span data-i18n="hero.cta">Écouter le projet</span> <span class="arrow">→</span>
       </a>
-      <p class="hero__quote">« comme une impression d'être fait pour ça, un controle sur rien »</p>
+      <p class="hero__quote" data-i18n="hero.quote">« comme une impression d'être fait pour ça, un controle sur rien »</p>
     </div>
   </header>
 
   <!-- ============== ALBUM ============== -->
   <section id="album">
     <div class="wrap">
-      <div class="section-label">01 — Le projet</div>
+      <div class="section-label" data-i18n="album.label">01 — Le projet</div>
 
       <div class="cover">
         <div class="cover__img">
@@ -202,7 +207,7 @@
   <!-- ============== A.VIB ============== -->
   <section id="avib">
     <div class="wrap">
-      <div class="section-label">02 — Analyses A.VIB</div>
+      <div class="section-label" data-i18n="avib.label">02 — Analyses A.VIB</div>
       <h2>Lecture vibratoire de chaque son<br/>selon l'échelle de <span class="red">Hawkins</span>.</h2>
       <p class="muted" style="max-width:600px;margin-top:20px;">Concept propriétaire FEELV. Chaque morceau est scanné sur l'échelle Power vs Force (0–1000) — la fréquence émotionnelle dominante au moment de la composition.</p>
 
@@ -509,7 +514,7 @@
   <!-- ============== DISCOGRAPHY ============== -->
   <section id="discography">
     <div class="wrap">
-      <div class="section-label">03 — Discographie</div>
+      <div class="section-label" data-i18n="discog.label">03 — Discographie</div>
       <h2>Six projets.<br/><span class="red">Une trajectoire.</span></h2>
 
       <ul class="discog">
@@ -550,7 +555,7 @@
   <!-- ============== STATS (gated) ============== -->
   <section id="stats">
     <div class="wrap">
-      <div class="section-label">04 — Spotify · avril/mai 2026</div>
+      <div class="section-label" data-i18n="stats.label">04 — Spotify · avril/mai 2026</div>
       <h2>Indépendant.<br/><span class="red">Organique.</span></h2>
 
       <!-- =========== GATE (visible par défaut) =========== -->
@@ -564,8 +569,8 @@
           <a href="https://youtube.com/..." data-confirm="youtube">YouTube</a>
 
           <div class="gate__icon">◐</div>
-          <h3 class="gate__title">Stats réservées aux fans.</h3>
-          <p class="gate__sub">
+          <h3 class="gate__title" data-i18n="gate.title.lock">Stats réservées aux fans.</h3>
+          <p class="gate__sub" data-i18n="gate.sub.lock">
             Pour découvrir les chiffres derrière FEELV, suis-moi sur ta plateforme préférée.
             Tu pourras ensuite débloquer la section.
           </p>
@@ -577,29 +582,29 @@
                target="_blank" rel="noopener"
                data-platform="spotify">
               <span class="gate__platform-name">Spotify</span>
-              <span class="gate__platform-action">Suivre ↗</span>
+              <span class="gate__platform-action" data-i18n="gate.follow">Suivre ↗</span>
             </a>
             <a class="gate__platform gate__platform--apple"
                href="https://music.apple.com/search?term=Feel%20Vlone"
                target="_blank" rel="noopener"
                data-platform="apple">
               <span class="gate__platform-name">Apple Music</span>
-              <span class="gate__platform-action">Suivre ↗</span>
+              <span class="gate__platform-action" data-i18n="gate.follow">Suivre ↗</span>
             </a>
             <a class="gate__platform gate__platform--deezer"
                href="https://www.deezer.com/search/Feel%20Vlone"
                target="_blank" rel="noopener"
                data-platform="deezer">
               <span class="gate__platform-name">Deezer</span>
-              <span class="gate__platform-action">Suivre ↗</span>
+              <span class="gate__platform-action" data-i18n="gate.follow">Suivre ↗</span>
             </a>
           </div>
 
-          <button class="gate__claim" data-action="claim">
+          <button class="gate__claim" data-action="claim" data-i18n="gate.claim">
             Je suis déjà abonné →
           </button>
 
-          <p class="gate__note">
+          <p class="gate__note" data-i18n="gate.note">
             ◇ Vérification automatique via Spotify (OAuth) — bientôt disponible.
           </p>
         </div>
@@ -607,8 +612,8 @@
         <!-- Étape 2 : confirmation (honor system) -->
         <div class="gate__panel gate__panel--confirm" hidden>
           <div class="gate__icon">◑</div>
-          <h3 class="gate__title">Sur quelle plateforme me suis-tu ?</h3>
-          <p class="gate__sub">
+          <h3 class="gate__title" data-i18n="gate.title.confirm">Sur quelle plateforme me suis-tu ?</h3>
+          <p class="gate__sub" data-i18n="gate.sub.lock">
             Sélectionne où tu m'écoutes — pour cette session, ta réponse débloque les stats.
             (Vérification automatique en V2.)
           </p>
@@ -616,19 +621,19 @@
           <div class="gate__platforms">
             <button class="gate__platform" data-confirm="spotify">
               <span class="gate__platform-name">Spotify</span>
-              <span class="gate__platform-action">Confirmer →</span>
+              <span class="gate__platform-action" data-i18n="gate.confirm">Confirmer →</span>
             </button>
             <button class="gate__platform" data-confirm="apple">
               <span class="gate__platform-name">Apple Music</span>
-              <span class="gate__platform-action">Confirmer →</span>
+              <span class="gate__platform-action" data-i18n="gate.confirm">Confirmer →</span>
             </button>
             <button class="gate__platform" data-confirm="deezer">
               <span class="gate__platform-name">Deezer</span>
-              <span class="gate__platform-action">Confirmer →</span>
+              <span class="gate__platform-action" data-i18n="gate.confirm">Confirmer →</span>
             </button>
           </div>
 
-          <button class="gate__claim gate__claim--back" data-action="back">← Retour</button>
+          <button class="gate__claim gate__claim--back" data-action="back" data-i18n="gate.back">← Retour</button>
         </div>
       </div>
 
@@ -686,7 +691,7 @@
   <!-- ============== CREDITS ============== -->
   <section id="credits">
     <div class="wrap">
-      <div class="section-label">05 — Crew</div>
+      <div class="section-label" data-i18n="crew.label">05 — Crew</div>
       <h2>L'<span class="red">équipe</span> derrière FEELV.</h2>
 
       <div class="credits-grid">
@@ -714,7 +719,7 @@
   <!-- ============== CONTACT ============== -->
   <section id="contact" class="contact">
     <div class="wrap">
-      <div class="section-label" style="justify-content:center;">06 — Contact</div>
+      <div class="section-label" style="justify-content:center;" data-i18n="contact.label">06 — Contact</div>
       <h2>Booking · Press · <span class="red">Collabs</span></h2>
       <a class="contact__email" href="mailto:central.feelv@gmail.com">central.feelv@gmail.com</a>
 

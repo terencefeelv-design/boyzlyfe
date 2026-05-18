@@ -6,6 +6,244 @@
 (() => {
   'use strict';
 
+  /* ============================================================
+     I18N — FR (défaut) / DE / EN
+     ------------------------------------------------------------
+     Toute string traduisible porte data-i18n="<key>" dans le HTML.
+     Au chargement, applyI18n(lang) parcourt et remplace.
+     Choix utilisateur persisté dans localStorage("feelv_lang").
+     ============================================================ */
+
+  const I18N = {
+    fr: {
+      'nav.album': 'Album', 'nav.avib': 'A.VIB', 'nav.discog': 'Discographie',
+      'nav.stats': 'Stats', 'nav.presskit': 'Press kit', 'nav.contact': 'Contact',
+
+      'hero.tagline.pre': '« À travers le monde, pour la culture » · ',
+      'hero.meta': 'Pre-save 01 — 06 — 2026 · Drop 05 — 06 — 2026',
+      'hero.sub': 'Feel Vlone · singer / producer / beatmaker · biel-bienne, suisse',
+      'hero.cta': 'Écouter le projet',
+      'hero.quote': '« comme une impression d\'être fait pour ça, un controle sur rien »',
+
+      'album.label': '01 — Le projet',
+      'album.progressive': 'Sortie progressive — un nouveau titre toutes les deux semaines.',
+      'album.stats.presave': 'Pre-save',
+      'album.stats.drop': 'Drop',
+      'album.stats.distri': 'Distribution',
+      'album.stats.platforms': 'Choisis ta plateforme d\'écoute',
+      'album.progressive.label': 'Visuel · sorties progressives',
+      'album.progressive.sub': 'Utilisé toute l\'année 2025/2026 pour les drops bi-mensuels',
+
+      'avib.label': '02 — Analyses A.VIB',
+      'avib.intro': 'Concept propriétaire FEELV. Chaque morceau est scanné sur l\'échelle Power vs Force (0–1000) — la fréquence émotionnelle dominante au moment de la composition.',
+      'avib.graph.caption': 'Trajectoire de l\'album · 16 tracks',
+      'avib.graph.hint': '— passe la souris ou tape pour voir le détail · clic = fiche A.VIB',
+
+      'discog.label': '03 — Discographie',
+      'discog.tag.upcoming': 'À venir',
+      'discog.tag.album': 'Album',
+
+      'stats.label': '04 — Spotify · avril/mai 2026',
+      'crew.label': '05 — Crew',
+      'crew.role.artist': 'Rapper / Producer / Beatmaker',
+      'crew.role.aka': 'aka Feel Vlone',
+      'crew.role.ad': 'Artistic Direction',
+      'crew.role.styling': 'Styling',
+      'crew.role.mgmt': 'Management',
+
+      'contact.label': '06 — Contact',
+      'contact.download': 'Télécharger le press kit',
+
+      'gate.title.lock': 'Stats réservées aux fans.',
+      'gate.sub.lock': 'Pour découvrir les chiffres derrière FEELV, suis-moi sur ta plateforme préférée. Tu pourras ensuite débloquer la section.',
+      'gate.follow': 'Suivre ↗',
+      'gate.claim': 'Je suis déjà abonné →',
+      'gate.note': '◇ Vérification automatique via Spotify (OAuth) — bientôt disponible.',
+      'gate.title.confirm': 'Sur quelle plateforme me suis-tu ?',
+      'gate.sub.confirm': 'Sélectionne où tu m\'écoutes — pour cette session, ta réponse débloque les stats. (Vérification automatique en V2.)',
+      'gate.confirm': 'Confirmer →',
+      'gate.back': '← Retour',
+      'gate.verified.prefix': 'Vérifié — fan',
+
+      'pk.back': '← Retour',
+      'pk.stats': 'Statistiques Spotify', 'pk.audience': 'Audience',
+      'pk.listeners-monthly': 'Listeners / mois',
+      'pk.streams-28': 'Streams / 28 jours',
+      'pk.followers': 'Followers',
+      'pk.listeners-all': 'Listeners all-time',
+      'pk.streams-peak': 'Streams / mois (peak)',
+      'pk.tracks': 'Titres distribués',
+      'pk.via-playlists': 'Découverte via playlists users',
+      'pk.gender': 'Genre', 'pk.age': 'Âge dominant', 'pk.years': 'ans',
+      'pk.top-country': 'Top pays #1',
+      'pk.country.ch': 'Suisse', 'pk.country.it': 'Italie', 'pk.country.za': 'Afrique du Sud',
+      'pk.discography': 'Discographie',
+    },
+
+    en: {
+      'nav.album': 'Album', 'nav.avib': 'A.VIB', 'nav.discog': 'Discography',
+      'nav.stats': 'Stats', 'nav.presskit': 'Press kit', 'nav.contact': 'Contact',
+
+      'hero.tagline.pre': '« Across the world, for the culture » · ',
+      'hero.meta': 'Pre-save 06.01.2026 · Drop 06.05.2026',
+      'hero.sub': 'Feel Vlone · singer / producer / beatmaker · biel-bienne, switzerland',
+      'hero.cta': 'Listen to the project',
+      'hero.quote': '« like the impression of being made for this, a control on nothing »',
+
+      'album.label': '01 — The project',
+      'album.progressive': 'Progressive release — a new track every two weeks.',
+      'album.stats.presave': 'Pre-save',
+      'album.stats.drop': 'Drop',
+      'album.stats.distri': 'Distribution',
+      'album.stats.platforms': 'Choose your platform',
+      'album.progressive.label': 'Visual · progressive releases',
+      'album.progressive.sub': 'Used throughout 2025/2026 for bi-monthly drops',
+
+      'avib.label': '02 — A.VIB Analyses',
+      'avib.intro': 'Proprietary FEELV concept. Each track is scanned on the Power vs Force scale (0–1000) — the dominant emotional frequency at the moment of composition.',
+      'avib.graph.caption': 'Album trajectory · 16 tracks',
+      'avib.graph.hint': '— hover or tap to see details · click = A.VIB sheet',
+
+      'discog.label': '03 — Discography',
+      'discog.tag.upcoming': 'Upcoming',
+      'discog.tag.album': 'Album',
+
+      'stats.label': '04 — Spotify · April/May 2026',
+      'crew.label': '05 — Crew',
+      'crew.role.artist': 'Rapper / Producer / Beatmaker',
+      'crew.role.aka': 'aka Feel Vlone',
+      'crew.role.ad': 'Artistic Direction',
+      'crew.role.styling': 'Styling',
+      'crew.role.mgmt': 'Management',
+
+      'contact.label': '06 — Contact',
+      'contact.download': 'Download press kit',
+
+      'gate.title.lock': 'Stats reserved for fans.',
+      'gate.sub.lock': 'To discover the numbers behind FEELV, follow me on your favorite platform. You can then unlock this section.',
+      'gate.follow': 'Follow ↗',
+      'gate.claim': 'I\'m already subscribed →',
+      'gate.note': '◇ Auto-verification via Spotify (OAuth) — coming soon.',
+      'gate.title.confirm': 'Which platform are you following on?',
+      'gate.sub.confirm': 'Select where you listen to me — your answer unlocks the stats. (Auto-verification in V2.)',
+      'gate.confirm': 'Confirm →',
+      'gate.back': '← Back',
+      'gate.verified.prefix': 'Verified — fan',
+
+      'pk.back': '← Back',
+      'pk.stats': 'Spotify Statistics', 'pk.audience': 'Audience',
+      'pk.listeners-monthly': 'Monthly listeners',
+      'pk.streams-28': 'Streams / 28 days',
+      'pk.followers': 'Followers',
+      'pk.listeners-all': 'Listeners all-time',
+      'pk.streams-peak': 'Monthly streams (peak)',
+      'pk.tracks': 'Tracks distributed',
+      'pk.via-playlists': 'Discovery via user playlists',
+      'pk.gender': 'Gender', 'pk.age': 'Dominant age', 'pk.years': 'years',
+      'pk.top-country': 'Top country #1',
+      'pk.country.ch': 'Switzerland', 'pk.country.it': 'Italy', 'pk.country.za': 'South Africa',
+      'pk.discography': 'Discography',
+    },
+
+    de: {
+      'nav.album': 'Album', 'nav.avib': 'A.VIB', 'nav.discog': 'Diskografie',
+      'nav.stats': 'Stats', 'nav.presskit': 'Pressemappe', 'nav.contact': 'Kontakt',
+
+      'hero.tagline.pre': '« Durch die Welt, für die Kultur » · ',
+      'hero.meta': 'Pre-save 01.06.2026 · Drop 05.06.2026',
+      'hero.sub': 'Feel Vlone · Sänger / Produzent / Beatmaker · biel-bienne, schweiz',
+      'hero.cta': 'Das Projekt hören',
+      'hero.quote': '« wie der Eindruck, dafür gemacht zu sein, eine Kontrolle über nichts »',
+
+      'album.label': '01 — Das Projekt',
+      'album.progressive': 'Progressive Release — alle zwei Wochen ein neuer Track.',
+      'album.stats.presave': 'Pre-save',
+      'album.stats.drop': 'Drop',
+      'album.stats.distri': 'Distribution',
+      'album.stats.platforms': 'Wähle deine Plattform',
+      'album.progressive.label': 'Visual · Progressive Releases',
+      'album.progressive.sub': '2025/2026 für die zweiwöchentlichen Drops verwendet',
+
+      'avib.label': '02 — A.VIB Analysen',
+      'avib.intro': 'FEELV-eigenes Konzept. Jeder Track wird auf der Power vs Force-Skala (0–1000) gescannt — die dominante emotionale Frequenz im Moment der Komposition.',
+      'avib.graph.caption': 'Album-Trajektorie · 16 Tracks',
+      'avib.graph.hint': '— Maus drüber oder tippen für Details · Klick = A.VIB-Karte',
+
+      'discog.label': '03 — Diskografie',
+      'discog.tag.upcoming': 'Kommend',
+      'discog.tag.album': 'Album',
+
+      'stats.label': '04 — Spotify · April/Mai 2026',
+      'crew.label': '05 — Crew',
+      'crew.role.artist': 'Rapper / Produzent / Beatmaker',
+      'crew.role.aka': 'alias Feel Vlone',
+      'crew.role.ad': 'Artistic Direction',
+      'crew.role.styling': 'Styling',
+      'crew.role.mgmt': 'Management',
+
+      'contact.label': '06 — Kontakt',
+      'contact.download': 'Pressemappe herunterladen',
+
+      'gate.title.lock': 'Stats für Fans reserviert.',
+      'gate.sub.lock': 'Um die Zahlen hinter FEELV zu entdecken, folge mir auf deiner bevorzugten Plattform. Du kannst dann diesen Bereich freischalten.',
+      'gate.follow': 'Folgen ↗',
+      'gate.claim': 'Ich folge bereits →',
+      'gate.note': '◇ Automatische Überprüfung via Spotify (OAuth) — bald verfügbar.',
+      'gate.title.confirm': 'Auf welcher Plattform folgst du mir?',
+      'gate.sub.confirm': 'Wähle, wo du mich hörst — deine Antwort schaltet die Stats frei. (Automatische Überprüfung in V2.)',
+      'gate.confirm': 'Bestätigen →',
+      'gate.back': '← Zurück',
+      'gate.verified.prefix': 'Verifiziert — Fan',
+
+      'pk.back': '← Zurück',
+      'pk.stats': 'Spotify-Statistiken', 'pk.audience': 'Publikum',
+      'pk.listeners-monthly': 'Listener / Monat',
+      'pk.streams-28': 'Streams / 28 Tage',
+      'pk.followers': 'Followers',
+      'pk.listeners-all': 'Listener gesamt',
+      'pk.streams-peak': 'Streams / Monat (Peak)',
+      'pk.tracks': 'Verteilte Tracks',
+      'pk.via-playlists': 'Entdeckung via User-Playlisten',
+      'pk.gender': 'Geschlecht', 'pk.age': 'Dominantes Alter', 'pk.years': 'Jahre',
+      'pk.top-country': 'Top-Land #1',
+      'pk.country.ch': 'Schweiz', 'pk.country.it': 'Italien', 'pk.country.za': 'Südafrika',
+      'pk.discography': 'Diskografie',
+    },
+  };
+
+  const LANG_KEY = 'feelv_lang';
+
+  function getLang() {
+    let lang = null;
+    try { lang = localStorage.getItem(LANG_KEY); } catch (e) {}
+    if (lang && I18N[lang]) return lang;
+    // détection navigateur en fallback
+    const nav = (navigator.language || 'fr').toLowerCase().slice(0, 2);
+    return I18N[nav] ? nav : 'fr';
+  }
+
+  function applyI18n(lang) {
+    if (!I18N[lang]) lang = 'fr';
+    const dict = I18N[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.dataset.i18n;
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll('.lang-switch button').forEach(b => {
+      b.classList.toggle('is-active', b.dataset.lang === lang);
+    });
+    try { localStorage.setItem(LANG_KEY, lang); } catch (e) {}
+  }
+
+  // Init au plus tôt
+  applyI18n(getLang());
+
+  // Click handlers
+  document.querySelectorAll('.lang-switch button').forEach(btn => {
+    btn.addEventListener('click', () => applyI18n(btn.dataset.lang));
+  });
+
   /* ---------- Smooth scroll pour les ancres internes ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
     link.addEventListener('click', (e) => {

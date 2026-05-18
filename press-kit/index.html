@@ -38,10 +38,15 @@
   <nav class="nav">
     <a href="../index.html" class="nav__logo">FEELV<span class="dot">·</span></a>
     <div class="nav__links">
-      <a href="../index.html#album">Album</a>
-      <a href="../index.html#avib">A.VIB</a>
-      <a href="../index.html#stats">Stats</a>
-      <a href="../index.html#contact">Contact</a>
+      <a href="../index.html#album" data-i18n="nav.album">Album</a>
+      <a href="../index.html#avib" data-i18n="nav.avib">A.VIB</a>
+      <a href="../index.html#stats" data-i18n="nav.stats">Stats</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+      <span class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="fr" aria-label="Français">FR</button>
+        <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
+        <button type="button" data-lang="en" aria-label="English">EN</button>
+      </span>
     </div>
   </nav>
 
@@ -89,35 +94,119 @@
         Version HD (15 MB) ↗
       </a>
 
+      <!-- ============== GATE STATS + AUDIENCE ============== -->
+      <div class="gate" id="stats-gate" data-state="lock" data-i18n-section="stats-gate" style="margin-top:80px;">
+
+        <!-- Étape 1 : invitation à follow -->
+        <div class="gate__panel gate__panel--lock">
+          <div class="gate__icon">◐</div>
+          <h3 class="gate__title" data-i18n="gate.title.lock">Stats & audience · réservées aux fans.</h3>
+          <p class="gate__sub" data-i18n="gate.sub.lock">
+            Pour découvrir les statistiques Spotify et le breakdown de l'audience, suis-moi sur ta plateforme préférée.
+            Tu pourras ensuite débloquer la section.
+          </p>
+
+          <div class="gate__platforms">
+            <a class="gate__platform gate__platform--spotify"
+               href="https://open.spotify.com/search/Feel%20Vlone"
+               target="_blank" rel="noopener"
+               data-platform="spotify">
+              <span class="gate__platform-name">Spotify</span>
+              <span class="gate__platform-action" data-i18n="gate.follow">Suivre ↗</span>
+            </a>
+            <a class="gate__platform gate__platform--apple"
+               href="https://music.apple.com/search?term=Feel%20Vlone"
+               target="_blank" rel="noopener"
+               data-platform="apple">
+              <span class="gate__platform-name">Apple Music</span>
+              <span class="gate__platform-action" data-i18n="gate.follow">Suivre ↗</span>
+            </a>
+            <a class="gate__platform gate__platform--deezer"
+               href="https://www.deezer.com/search/Feel%20Vlone"
+               target="_blank" rel="noopener"
+               data-platform="deezer">
+              <span class="gate__platform-name">Deezer</span>
+              <span class="gate__platform-action" data-i18n="gate.follow">Suivre ↗</span>
+            </a>
+          </div>
+
+          <button class="gate__claim" data-action="claim" data-i18n="gate.claim">
+            Je suis déjà abonné →
+          </button>
+
+          <p class="gate__note" data-i18n="gate.note">
+            ◇ Vérification automatique via Spotify (OAuth) — bientôt disponible.
+          </p>
+        </div>
+
+        <!-- Étape 2 : confirmation -->
+        <div class="gate__panel gate__panel--confirm" hidden>
+          <div class="gate__icon">◑</div>
+          <h3 class="gate__title" data-i18n="gate.title.confirm">Sur quelle plateforme me suis-tu ?</h3>
+          <p class="gate__sub" data-i18n="gate.sub.confirm">
+            Sélectionne où tu m'écoutes — ta réponse débloque les stats.
+          </p>
+
+          <div class="gate__platforms">
+            <button class="gate__platform" data-confirm="spotify">
+              <span class="gate__platform-name">Spotify</span>
+              <span class="gate__platform-action" data-i18n="gate.confirm">Confirmer →</span>
+            </button>
+            <button class="gate__platform" data-confirm="apple">
+              <span class="gate__platform-name">Apple Music</span>
+              <span class="gate__platform-action" data-i18n="gate.confirm">Confirmer →</span>
+            </button>
+            <button class="gate__platform" data-confirm="deezer">
+              <span class="gate__platform-name">Deezer</span>
+              <span class="gate__platform-action" data-i18n="gate.confirm">Confirmer →</span>
+            </button>
+          </div>
+
+          <button class="gate__claim gate__claim--back" data-action="back" data-i18n="gate.back">← Retour</button>
+        </div>
+      </div>
+
+      <!-- ============== CONTENU GATÉ (Stats + Audience, révélé après unlock) ============== -->
+      <div class="gate__content" id="stats-content" hidden>
+        <div class="gate__badge">
+          <span class="gate__badge-icon">●</span>
+          <span class="gate__badge-text" data-i18n="gate.verified.prefix">Vérifié — fan <span id="gate-platform-label">FEELV</span></span>
+          <button class="gate__reset" data-action="reset" title="Quitter">×</button>
+        </div>
+
+        <div class="pk__grid">
+          <div>
+            <div class="section-label" data-i18n="pk.stats">Statistiques Spotify</div>
+            <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;">
+              <li><span class="muted" data-i18n="pk.listeners-monthly">Listeners / mois</span> · 36</li>
+              <li><span class="muted" data-i18n="pk.streams-28">Streams / 28 jours</span> · 366</li>
+              <li><span class="muted" data-i18n="pk.followers">Followers</span> · 19</li>
+              <li><span class="muted" data-i18n="pk.listeners-all">Listeners all-time</span> · 400+</li>
+              <li><span class="muted" data-i18n="pk.streams-peak">Streams / mois (peak)</span> · 500</li>
+              <li><span class="muted" data-i18n="pk.tracks">Titres distribués</span> · 70+</li>
+              <li><span class="muted" data-i18n="pk.via-playlists">Découverte via playlists users</span> · 56%</li>
+            </ul>
+          </div>
+
+          <div>
+            <div class="section-label" data-i18n="pk.audience">Audience</div>
+            <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;">
+              <li><span class="muted" data-i18n="pk.gender">Genre</span> · 68% M / 27% F</li>
+              <li><span class="muted" data-i18n="pk.age">Âge dominant</span> · 25–34 <span data-i18n="pk.years">ans</span> (51%)</li>
+              <li><span class="muted" data-i18n="pk.top-country">Top pays #1</span> · Nigeria</li>
+              <li><span class="muted">#2</span> · <span data-i18n="pk.country.ch">Suisse</span></li>
+              <li><span class="muted">#3</span> · <span data-i18n="pk.country.it">Italie</span></li>
+              <li><span class="muted">#4</span> · Congo</li>
+              <li><span class="muted">#5</span> · <span data-i18n="pk.country.za">Afrique du Sud</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- ============== GRID PUBLIC (discog, crew, contacts, tags — restent visibles) ============== -->
       <div class="pk__grid">
         <div>
-          <div class="section-label">Statistiques Spotify</div>
-          <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;">
-            <li><span class="muted">Listeners / mois</span> · 36</li>
-            <li><span class="muted">Streams / 28 jours</span> · 366</li>
-            <li><span class="muted">Followers</span> · 19</li>
-            <li><span class="muted">Listeners all-time</span> · 400+</li>
-            <li><span class="muted">Streams / mois (peak)</span> · 500</li>
-            <li><span class="muted">Titres distribués</span> · 70+</li>
-            <li><span class="muted">Découverte via playlists users</span> · 56%</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="section-label">Audience</div>
-          <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;">
-            <li><span class="muted">Genre</span> · 68% M / 27% F</li>
-            <li><span class="muted">Âge dominant</span> · 25–34 ans (51%)</li>
-            <li><span class="muted">Top pays #1</span> · Nigeria</li>
-            <li><span class="muted">#2</span> · Suisse</li>
-            <li><span class="muted">#3</span> · Italie</li>
-            <li><span class="muted">#4</span> · Congo</li>
-            <li><span class="muted">#5</span> · Afrique du Sud</li>
-          </ul>
-        </div>
-
-        <div>
-          <div class="section-label">Discographie</div>
+          <div class="section-label" data-i18n="pk.discography">Discographie</div>
           <ul style="list-style:none;padding:0;margin:0;font-size:14px;line-height:2;">
             <li><span class="red">bOYz Lyf£</span> · 2026 (à venir)</li>
             <li>Fallen Angels · 2025</li>
@@ -170,5 +259,6 @@
     </div>
   </footer>
 
+  <script src="../script.js"></script>
 </body>
 </html>

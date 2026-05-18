@@ -120,6 +120,42 @@ section:first-of-type { border-top: 0; }
 
 .nav__links a:hover { color: var(--c-text); }
 
+/* ---------- Language switcher (FR/DE/EN) ---------- */
+.lang-switch {
+  display: inline-flex;
+  gap: 6px;
+  margin-left: clamp(12px, 2vw, 32px);
+  padding-left: clamp(12px, 2vw, 32px);
+  border-left: 1px solid var(--c-line);
+  align-items: center;
+}
+
+.lang-switch button {
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+  background: none;
+  border: 0;
+  padding: 6px 4px;
+  cursor: pointer;
+  transition: color 0.2s var(--ease);
+}
+
+.lang-switch button:hover { color: var(--c-text); }
+.lang-switch button.is-active { color: var(--c-red); font-weight: 500; }
+
+/* sur très petits écrans, on cache le sélecteur (pour gagner de la place sur la nav) */
+@media (max-width: 540px) {
+  .lang-switch {
+    margin-left: 8px;
+    padding-left: 8px;
+    gap: 2px;
+  }
+  .lang-switch button { font-size: 10px; padding: 4px 2px; }
+}
+
 /* ---------- HERO ---------- */
 .hero {
   min-height: 100vh;
@@ -966,11 +1002,62 @@ section:first-of-type { border-top: 0; }
 .foot__tags { display: flex; gap: 12px; flex-wrap: wrap; }
 
 /* ---------- RESPONSIVE ---------- */
-@media (max-width: 800px) {
-  .cover { grid-template-columns: 1fr; }
-  .nav__links a:not(.nav__cta) { display: none; }
+
+/* Tablette (≤ 900px) : grilles 2-col → 1-col, nav plus compacte */
+@media (max-width: 900px) {
+  .cover         { grid-template-columns: 1fr; }
+  .fiche__hero   { grid-template-columns: 1fr; gap: 32px; }
+  .pk__grid      { grid-template-columns: 1fr; gap: 40px; }
+  .nav__links {
+    gap: clamp(8px, 1.5vw, 16px);
+  }
+  .nav__links a {
+    font-size: 10px;
+    letter-spacing: 0.1em;
+  }
+}
+
+/* Mobile (≤ 700px) : nav scrollable horizontalement,
+   lang-switch toujours visible, on cache la section "stats" link
+   (la moins critique) pour gagner de la place */
+@media (max-width: 700px) {
+  .nav {
+    padding: 14px var(--pad-x);
+  }
+  .nav__logo { font-size: 18px; }
+  .nav__links {
+    gap: 14px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+    padding-bottom: 4px;
+  }
+  .nav__links::-webkit-scrollbar { display: none; }
+  .nav__links a {
+    flex-shrink: 0;
+    white-space: nowrap;
+  }
+  /* tracklist : on cache le badge "Single" sur mobile, le lien A.VIB suffit */
   .track { grid-template-columns: 40px 1fr auto; gap: 12px; }
-  .track__link { display: none; }
+  .track__single { display: none; }
+}
+
+/* Très petit mobile (≤ 480px) : pousse encore */
+@media (max-width: 480px) {
+  .nav__links a {
+    font-size: 9.5px;
+    letter-spacing: 0.08em;
+  }
+  /* hero meta : on réduit pour éviter overflow */
+  .hero__meta {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
+  .hero__tagline {
+    font-size: 10px;
+    letter-spacing: 0.2em;
+  }
 }
 
 /* ---------- FUTUR 3D HOOK ----------
