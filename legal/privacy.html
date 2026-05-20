@@ -1,0 +1,275 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Politique de confidentialité — FEELV</title>
+  <meta name="description" content="Politique de confidentialité du site feelv.ch — conforme RGPD (UE) et nLPD (Suisse)." />
+  <link rel="icon" href="/assets/favicon.png" />
+  <link rel="stylesheet" href="../styles.css" />
+  <style>
+    .legal { padding-top: 140px; padding-bottom: 80px; }
+    .legal__back { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 40px; display: inline-block; }
+    .legal__back:hover { color: var(--c-red); }
+    .legal h1 { font-family: var(--f-display); font-size: clamp(40px, 6vw, 72px); letter-spacing: 0.04em; line-height: 1; margin: 0 0 16px; }
+    .legal__intro { font-size: 14px; color: var(--c-muted); margin-bottom: 60px; max-width: 700px; line-height: 1.7; }
+    .legal__meta { font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--c-muted); margin-bottom: 8px; }
+    .legal section { max-width: 760px; margin: 0 0 48px; }
+    .legal h2 { font-family: var(--f-display); font-size: 28px; letter-spacing: 0.03em; margin: 0 0 16px; color: var(--c-text); }
+    .legal h3 { font-family: var(--f-display); font-size: 18px; letter-spacing: 0.05em; margin: 24px 0 8px; color: var(--c-red); }
+    .legal p, .legal li { font-size: 14px; line-height: 1.7; color: var(--c-text); margin: 12px 0; }
+    .legal p.muted, .legal li.muted { color: var(--c-muted); }
+    .legal ul { padding-left: 20px; }
+    .legal a { color: var(--c-red); text-decoration: underline; }
+    .legal table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 13px; }
+    .legal th, .legal td { padding: 12px 14px; border: 1px solid var(--c-line); text-align: left; vertical-align: top; }
+    .legal th { background: var(--c-bg-soft); font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--c-muted); font-weight: 500; }
+    .legal code { font-family: var(--f-mono); font-size: 12px; background: var(--c-bg-soft); padding: 2px 6px; border-radius: 2px; color: var(--c-text); }
+  </style>
+</head>
+<body>
+
+  <nav class="nav">
+    <a href="../index.html" class="nav__logo">FEELV<span class="dot">·</span></a>
+    <div class="nav__links">
+      <a href="../index.html#album" data-i18n="nav.album">Album</a>
+      <a href="../index.html#avib" data-i18n="nav.avib">A.VIB</a>
+      <a href="../press-kit/index.html" data-i18n="nav.presskit">Press kit</a>
+      <a href="../index.html#contact" data-i18n="nav.contact">Contact</a>
+      <span class="lang-switch" role="group" aria-label="Language">
+        <button type="button" data-lang="fr" aria-label="Français">FR</button>
+        <button type="button" data-lang="de" aria-label="Deutsch">DE</button>
+        <button type="button" data-lang="en" aria-label="English">EN</button>
+      </span>
+    </div>
+  </nav>
+
+  <main class="legal">
+    <div class="wrap">
+      <a class="legal__back" href="../index.html">← Retour</a>
+
+      <div class="legal__meta">Mise à jour · 17 mai 2026</div>
+      <h1>Politique de confidentialité</h1>
+      <p class="legal__intro">
+        Cette page explique quelles données sont collectées sur <strong>feelv.ch</strong>, pourquoi, combien de temps,
+        et tes droits. Elle est conforme au RGPD (UE) et à la nLPD (Suisse, en vigueur depuis le 1er septembre 2023).
+      </p>
+
+      <section>
+        <h2>1. Responsable du traitement</h2>
+        <p>
+          Le responsable du traitement des données collectées sur feelv.ch est :
+        </p>
+        <p>
+          <strong>Térence-Michel Bidima</strong> (FEELV — Feel Vlone)<br/>
+          Artiste indépendant · Biel-Bienne, Suisse<br/>
+          Contact : <a href="mailto:central.feelv@gmail.com">central.feelv@gmail.com</a>
+        </p>
+        <p class="muted">
+          Pour toute question relative à tes données personnelles, à l'exercice de tes droits, ou pour signaler
+          un incident, contacte directement l'adresse ci-dessus. Réponse sous 30 jours maximum.
+        </p>
+      </section>
+
+      <section>
+        <h2>2. Données collectées</h2>
+        <p>
+          Le site feelv.ch est statique, sans inscription ni achat. La collecte est volontairement minimale.
+        </p>
+
+        <h3>2.1 — Stockées localement sur ton appareil (localStorage)</h3>
+        <ul>
+          <li><code>feelv_lang</code> — la langue choisie (FR, DE, EN), pour que ta préférence soit gardée à ton retour.</li>
+          <li><code>feelv_fan_platform</code> — la plateforme déclarée (Spotify, Apple, Deezer) pour débloquer la section stats. Aucune vérification, simple déclaration.</li>
+          <li><code>feelv_consent</code> — l'enregistrement du fait que tu as vu et accepté ce bandeau de consentement.</li>
+        </ul>
+        <p class="muted">
+          Ces données sont <strong>uniquement stockées dans ton navigateur</strong>, jamais transmises à un serveur, jamais
+          partagées. Tu peux les effacer à tout moment en vidant le stockage local de ton navigateur, ou via le bouton
+          « × Quitter le mode fan » dans la section stats du site.
+        </p>
+
+        <h3>2.2 — Logs serveur (hébergeur Vercel)</h3>
+        <p>
+          Comme tout site web, l'hébergeur conserve techniquement certaines informations à chaque visite :
+        </p>
+        <ul>
+          <li>Adresse IP (anonymisée après 24h chez Vercel)</li>
+          <li>Type de navigateur (user-agent)</li>
+          <li>Page consultée, date, heure</li>
+          <li>Site de provenance (referrer), si transmis par ton navigateur</li>
+        </ul>
+        <p class="muted">
+          Ces logs sont gérés par Vercel Inc. (États-Unis) et conservés ~30 jours pour la sécurité, la prévention
+          d'abus, et le bon fonctionnement du site. Voir la politique Vercel :
+          <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener">vercel.com/legal/privacy-policy</a>.
+          Vercel est conforme aux Standard Contractual Clauses (SCC) pour le transfert UE → US.
+        </p>
+
+        <h3>2.3 — Ressources externes chargées</h3>
+        <p>
+          Le site charge deux ressources tierces. En les chargeant, ton navigateur communique automatiquement avec
+          ces services (IP + referrer) :
+        </p>
+        <ul>
+          <li><strong>Google Fonts</strong> — polices Bebas Neue et DM Mono. Données envoyées : IP, navigateur, referrer.
+            <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">policies.google.com/privacy</a></li>
+          <li><strong>Cloudflare CDN</strong> — bibliothèque Three.js (animation 3D du hero). Données envoyées : IP, navigateur.
+            <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" rel="noopener">cloudflare.com/privacypolicy</a></li>
+        </ul>
+
+        <h3>2.4 — Ce qui n'est PAS collecté</h3>
+        <ul>
+          <li>Pas de cookies de tracking publicitaire</li>
+          <li>Pas d'analytics (Google Analytics, Plausible, etc.)</li>
+          <li>Pas de comptes utilisateur, pas de mots de passe</li>
+          <li>Pas de newsletter automatique (pas encore)</li>
+          <li>Pas de transactions financières, pas de carte bancaire</li>
+          <li>Pas de pixel Facebook / X / TikTok</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>3. Finalités &amp; bases légales</h2>
+        <table>
+          <thead>
+            <tr><th>Donnée</th><th>Finalité</th><th>Base légale (RGPD)</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><code>feelv_lang</code></td>
+              <td>Mémoriser ta langue préférée</td>
+              <td>Intérêt légitime (UX), art. 6§1.f RGPD</td>
+            </tr>
+            <tr>
+              <td><code>feelv_fan_platform</code></td>
+              <td>Débloquer les stats Spotify après auto-déclaration</td>
+              <td>Consentement explicite, art. 6§1.a RGPD</td>
+            </tr>
+            <tr>
+              <td><code>feelv_consent</code></td>
+              <td>Mémoriser l'acceptation de la politique</td>
+              <td>Obligation légale, art. 6§1.c RGPD</td>
+            </tr>
+            <tr>
+              <td>Logs Vercel</td>
+              <td>Sécurité, prévention d'abus, debug</td>
+              <td>Intérêt légitime, art. 6§1.f RGPD</td>
+            </tr>
+            <tr>
+              <td>Fonts &amp; CDN</td>
+              <td>Affichage typographique et 3D du site</td>
+              <td>Intérêt légitime, art. 6§1.f RGPD</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>4. Durée de conservation</h2>
+        <ul>
+          <li><strong>localStorage</strong> : tant que tu ne le supprimes pas, ou jusqu'à 1 an d'inactivité.</li>
+          <li><strong>Logs Vercel</strong> : ~30 jours, après quoi ils sont anonymisés ou supprimés.</li>
+          <li><strong>Ressources externes</strong> : géré par les sous-traitants concernés (Google, Cloudflare).</li>
+        </ul>
+      </section>
+
+      <section>
+        <h2>5. Tes droits</h2>
+        <p>
+          En tant que personne concernée, tu disposes des droits suivants (RGPD &amp; nLPD) :
+        </p>
+        <ul>
+          <li><strong>Droit d'accès</strong> — demander une copie de tes données.</li>
+          <li><strong>Droit de rectification</strong> — corriger des données inexactes.</li>
+          <li><strong>Droit à l'effacement</strong> (« droit à l'oubli ») — demander la suppression de tes données.</li>
+          <li><strong>Droit à la portabilité</strong> — récupérer tes données dans un format structuré.</li>
+          <li><strong>Droit d'opposition</strong> — refuser un traitement basé sur l'intérêt légitime.</li>
+          <li><strong>Droit de retirer ton consentement</strong> à tout moment.</li>
+          <li><strong>Droit de réclamation</strong> auprès de l'autorité compétente :
+            <ul>
+              <li>Suisse : <a href="https://www.edoeb.admin.ch/" target="_blank" rel="noopener">PFPDT (edoeb.admin.ch)</a></li>
+              <li>France : <a href="https://www.cnil.fr/" target="_blank" rel="noopener">CNIL (cnil.fr)</a></li>
+              <li>Autres UE : ton autorité nationale de protection des données</li>
+            </ul>
+          </li>
+        </ul>
+        <p>
+          Pour exercer ces droits, écris à <a href="mailto:central.feelv@gmail.com">central.feelv@gmail.com</a>.
+          Réponse sous 30 jours.
+        </p>
+      </section>
+
+      <section>
+        <h2>6. Cookies &amp; technologies similaires</h2>
+        <p>
+          Le site n'utilise <strong>aucun cookie de tracking</strong> publicitaire ou analytique.
+          Il utilise uniquement le stockage local (<code>localStorage</code>) du navigateur pour mémoriser
+          tes préférences (langue, état du gate fan). Ces données ne sont pas transmises à des tiers.
+        </p>
+        <p class="muted">
+          Pour supprimer ces données : ouvre les paramètres de ton navigateur → confidentialité → effacer les données
+          de site / cookies, et cible <code>feelv.ch</code>. Ou clique le « × » dans le badge fan sur la section stats.
+        </p>
+      </section>
+
+      <section>
+        <h2>7. Transferts hors UE / Suisse</h2>
+        <p>
+          Vercel (États-Unis) et Cloudflare (États-Unis) traitent une partie des données techniques (IP, requêtes).
+          Ces sociétés sont conformes aux <strong>Standard Contractual Clauses (SCC)</strong> de la Commission européenne
+          pour les transferts internationaux, et au cadre <strong>EU-US Data Privacy Framework</strong>.
+        </p>
+      </section>
+
+      <section>
+        <h2>8. Sécurité</h2>
+        <p>
+          Le site est servi exclusivement en <strong>HTTPS</strong> (chiffrement SSL/TLS). Les pages sont statiques —
+          aucun stockage serveur, aucune base de données utilisateurs. Le risque de fuite de données est donc structurellement
+          minimisé.
+        </p>
+      </section>
+
+      <section>
+        <h2>9. Mineurs</h2>
+        <p>
+          Le site ne s'adresse pas spécifiquement aux mineurs de moins de 16 ans (UE) ou 13 ans (Suisse), mais reste accessible.
+          Aucune donnée personnelle nominative n'est collectée. Si un parent souhaite qu'aucune trace ne soit conservée pour son
+          enfant, contacter <a href="mailto:central.feelv@gmail.com">central.feelv@gmail.com</a>.
+        </p>
+      </section>
+
+      <section>
+        <h2>10. Modifications</h2>
+        <p>
+          Cette politique peut être mise à jour. La date de dernière mise à jour est indiquée en haut de page.
+          En cas de changement significatif (ex : ajout d'analytics, intégration paiement), un nouveau bandeau de
+          consentement sera affiché.
+        </p>
+      </section>
+
+      <section>
+        <h2>11. Droit applicable</h2>
+        <p>
+          Droit suisse, complété par le RGPD pour les résidents UE.
+          Juridiction compétente : tribunaux du canton de Berne, Suisse.
+        </p>
+      </section>
+
+      <p class="muted" style="margin-top:80px;font-size:12px;">
+        Voir aussi : <a href="terms.html">Conditions d'utilisation (CGU)</a> · <a href="registre.html">Registre de traitement</a>
+      </p>
+    </div>
+  </main>
+
+  <footer class="foot">
+    <div>© 2026 FEELV · Feel Vlone · Biel-Bienne, CH</div>
+    <div class="foot__tags">
+      <a href="../index.html">feelv.ch</a> · <a href="terms.html">CGU</a> · <a href="registre.html">Registre</a>
+    </div>
+  </footer>
+
+  <script src="../script.js"></script>
+</body>
+</html>

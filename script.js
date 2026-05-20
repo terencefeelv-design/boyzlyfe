@@ -78,6 +78,11 @@
       'pk.top-country': 'Top pays #1',
       'pk.country.ch': 'Suisse', 'pk.country.it': 'Italie', 'pk.country.za': 'Afrique du Sud',
       'pk.discography': 'Discographie',
+
+      'consent.title': 'Données & confidentialité.',
+      'consent.body': 'feelv.ch est un site statique sans cookies de tracking ni analytics. Seules tes préférences (langue, gate fan) sont stockées dans ton navigateur.',
+      'consent.learnmore': 'En savoir plus →',
+      'consent.accept': 'J\'ai compris',
     },
 
     en: {
@@ -143,6 +148,11 @@
       'pk.top-country': 'Top country #1',
       'pk.country.ch': 'Switzerland', 'pk.country.it': 'Italy', 'pk.country.za': 'South Africa',
       'pk.discography': 'Discography',
+
+      'consent.title': 'Data & privacy.',
+      'consent.body': 'feelv.ch is a static site without tracking cookies or analytics. Only your preferences (language, fan gate) are stored in your browser.',
+      'consent.learnmore': 'Learn more →',
+      'consent.accept': 'Got it',
     },
 
     de: {
@@ -208,6 +218,11 @@
       'pk.top-country': 'Top-Land #1',
       'pk.country.ch': 'Schweiz', 'pk.country.it': 'Italien', 'pk.country.za': 'Südafrika',
       'pk.discography': 'Diskografie',
+
+      'consent.title': 'Daten & Datenschutz.',
+      'consent.body': 'feelv.ch ist eine statische Seite ohne Tracking-Cookies oder Analytics. Nur deine Präferenzen (Sprache, Fan-Gate) werden in deinem Browser gespeichert.',
+      'consent.learnmore': 'Mehr erfahren →',
+      'consent.accept': 'Verstanden',
     },
   };
 
@@ -243,6 +258,75 @@
   document.querySelectorAll('.lang-switch button').forEach(btn => {
     btn.addEventListener('click', () => applyI18n(btn.dataset.lang));
   });
+
+  /* ============================================================
+     CONSENT BANNER (RGPD / nLPD)
+     ------------------------------------------------------------
+     Affiché au 1er visit. L'acceptation est stockée dans
+     localStorage('feelv_consent'). Vu que le site n'utilise PAS
+     de cookies tracking, c'est purement informatif + obligatoire.
+     ============================================================ */
+
+  const CONSENT_KEY = 'feelv_consent';
+
+  function hasConsented() {
+    try { return localStorage.getItem(CONSENT_KEY) === 'accepted'; }
+    catch (e) { return false; }
+  }
+
+  function setConsented() {
+    try { localStorage.setItem(CONSENT_KEY, 'accepted'); } catch (e) {}
+  }
+
+  function buildConsentBanner() {
+    const dict = I18N[getLang()] || I18N.fr;
+    const isLegal = window.location.pathname.includes('/legal/');
+    const prefix = isLegal ? '' : (window.location.pathname.includes('/sons/') || window.location.pathname.includes('/press-kit/') ? '../' : '');
+
+    const div = document.createElement('aside');
+    div.className = 'consent';
+    div.setAttribute('role', 'dialog');
+    div.setAttribute('aria-label', 'Consentement aux données');
+    div.innerHTML = `
+      <div class="consent__icon">◐</div>
+      <div class="consent__body">
+        <strong data-i18n="consent.title">Données &amp; confidentialité.</strong>
+        <span data-i18n="consent.body">
+          feelv.ch est un site statique sans cookies de tracking ni analytics.
+          Seules tes préférences (langue, gate fan) sont stockées dans ton navigateur.
+        </span>
+        <a href="${prefix}legal/privacy.html" data-i18n="consent.learnmore">En savoir plus →</a>
+      </div>
+      <div class="consent__actions">
+        <button class="consent__btn consent__btn--primary" data-consent="accept" data-i18n="consent.accept">J'ai compris</button>
+      </div>
+    `;
+    return div;
+  }
+
+  function showConsentIfNeeded() {
+    if (hasConsented()) return;
+    const banner = buildConsentBanner();
+    document.body.appendChild(banner);
+    // Re-applique i18n maintenant que le banner est dans le DOM
+    applyI18n(getLang());
+
+    banner.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-consent]');
+      if (btn && btn.dataset.consent === 'accept') {
+        setConsented();
+        banner.classList.add('is-hiding');
+        setTimeout(() => banner.remove(), 400);
+      }
+    });
+  }
+
+  // Affiche le banner après que la page soit chargée pour ne pas casser le rendu initial
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', showConsentIfNeeded);
+  } else {
+    showConsentIfNeeded();
+  }
 
   /* ---------- Smooth scroll pour les ancres internes ---------- */
   document.querySelectorAll('a[href^="#"]').forEach(link => {
