@@ -964,6 +964,44 @@ section:first-of-type { border-top: 0; }
   margin-top: 4px;
 }
 
+/* ---------- TRUTH (vérité humaine — fragments bruts) ---------- */
+.truth {
+  padding: clamp(100px, 22vh, 220px) 0;
+  border-top: 1px solid var(--c-line);
+}
+
+.truth__mark {
+  width: 40px;
+  height: 2px;
+  background: var(--c-red);
+  margin-bottom: 56px;
+}
+
+.truth__lines {
+  max-width: 640px;
+}
+
+.truth__lines p {
+  font-family: var(--f-mono);
+  font-weight: 300;
+  font-size: clamp(20px, 2.8vw, 30px);
+  line-height: 1.55;
+  letter-spacing: 0.01em;
+  color: var(--c-muted);
+  margin: 0 0 clamp(40px, 7vh, 72px);
+  transition: color 0.6s var(--ease);
+}
+
+.truth__lines p:last-child { margin-bottom: 0; }
+
+/* la dernière ligne (la "mission") en blanc franc pour la faire ressortir doucement */
+.truth__lines p.truth__key {
+  color: var(--c-text);
+}
+
+/* au survol/focus de la section, les lignes s'éclaircissent — présence discrète */
+.truth:hover .truth__lines p { color: var(--c-text); }
+
 /* ---------- DISCOGRAPHY ---------- */
 .discog {
   list-style: none;
