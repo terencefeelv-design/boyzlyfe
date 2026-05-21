@@ -212,6 +212,112 @@ section:first-of-type { border-top: 0; }
   /* léger glow rouge pour faire respirer le logo sur l'image bg */
   filter: drop-shadow(0 4px 24px rgba(0,0,0,0.6))
           drop-shadow(0 0 1px rgba(0,0,0,0.95));
+  /* (1) flottement lent — respiration */
+  animation: logo-float 7s ease-in-out infinite;
+  will-change: transform;
+}
+
+@keyframes logo-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+/* ============================================================
+   MOTION IDENTITY — animations propres (vanilla, motion-safe)
+   ============================================================ */
+
+/* (3) Glow rouge qui suit la souris — ambiance vivante, discrète */
+.cursor-glow {
+  position: fixed;
+  top: 0; left: 0;
+  width: 480px;
+  height: 480px;
+  margin: -240px 0 0 -240px;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 5;
+  background: radial-gradient(circle, rgba(211,47,47,0.10) 0%, rgba(211,47,47,0.04) 35%, transparent 70%);
+  mix-blend-mode: screen;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+  will-change: transform;
+}
+.cursor-glow.is-active { opacity: 1; }
+
+/* (2) Parallax : headroom de scale pour que le translate ne montre jamais de bord */
+.cover__img { overflow: hidden; }
+.cover__img img,
+.progressive__thumb {
+  will-change: transform;
+}
+.interlude__img {
+  height: 118%;
+  top: -9%;
+  will-change: transform;
+}
+
+/* (5) Lightbox — preview agrandie de la progressive cover */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 300;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6vw;
+  background: rgba(8, 8, 8, 0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s var(--ease);
+  cursor: zoom-out;
+}
+.lightbox.is-open { opacity: 1; pointer-events: auto; }
+
+.lightbox img {
+  max-width: min(560px, 90vw);
+  max-height: 86vh;
+  width: auto;
+  height: auto;
+  border: 1px solid var(--c-line);
+  box-shadow: 0 30px 120px rgba(0,0,0,0.7);
+  transform: scale(0.94);
+  transition: transform 0.45s var(--ease);
+}
+.lightbox.is-open img { transform: scale(1); }
+
+.lightbox__hint {
+  position: absolute;
+  bottom: 5vh;
+  left: 0; right: 0;
+  text-align: center;
+  font-family: var(--f-mono);
+  font-size: 11px;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--c-muted);
+}
+
+/* la progressive thumb devient cliquable visuellement */
+.progressive__thumb {
+  cursor: zoom-in;
+  transition: transform 0.3s var(--ease), filter 0.3s var(--ease);
+}
+.progressive__thumb:hover {
+  transform: scale(1.04);
+  filter: brightness(1.1);
+}
+
+/* (4) Reveal cinématique — géré dans script.js (injection), enrichi ici en fallback */
+
+/* Respect total de prefers-reduced-motion : on coupe tout le motion non-essentiel */
+@media (prefers-reduced-motion: reduce) {
+  .hero__title--img img { animation: none; }
+  .cursor-glow { display: none; }
+  .cover__img img,
+  .progressive__thumb,
+  .interlude__img { transform: none !important; }
 }
 
 .hero__tagline {

@@ -368,13 +368,118 @@
     io.observe(el);
   });
 
-  /* Inject reveal CSS dynamically — keeps styles.css focused on layout */
+  /* (4) Reveal cinématique : fade + rise + micro-blur qui se résout */
   const style = document.createElement('style');
   style.textContent = `
-    .reveal { opacity: 0; transform: translateY(20px); transition: opacity .8s cubic-bezier(.2,.8,.2,1), transform .8s cubic-bezier(.2,.8,.2,1); }
-    .reveal.is-in { opacity: 1; transform: translateY(0); }
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      filter: blur(6px);
+      transition: opacity .9s cubic-bezier(.2,.8,.2,1),
+                  transform .9s cubic-bezier(.2,.8,.2,1),
+                  filter .9s cubic-bezier(.2,.8,.2,1);
+    }
+    .reveal.is-in { opacity: 1; transform: translateY(0); filter: blur(0); }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; filter: none; transition: none; }
+    }
   `;
   document.head.appendChild(style);
+
+  /* ============================================================
+     MOTION IDENTITY — vanilla, motion-safe (lerp maison)
+     ============================================================ */
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const finePointer = window.matchMedia('(pointer: fine)').matches;
+
+  if (!prefersReduced) {
+
+    /* (2) PARALLAX au scroll — depth subtil sur les images */
+    const parallaxEls = [
+      ...document.querySelectorAll('.cover__img img'),
+      ...document.querySelectorAll('.interlude__img'),
+      ...document.querySelectorAll('.progressive__thumb'),
+    ].map(el => {
+      // facteur par type d'élément
+      let speed = 0.06;
+      if (el.classList.contains('interlude__img')) speed = 0.10;
+      if (el.classList.contains('progressive__thumb')) speed = 0.04;
+      // baseline scale pour garder du headroom (sauf interlude qui a déjà height 118%)
+      if (!el.classList.contains('interlude__img')) el.style.transform = 'scale(1.08)';
+      return { el, speed, isInterlude: el.classList.contains('interlude__img') };
+    });
+
+    let parallaxRAF = null;
+    function updateParallax() {
+      const vh = window.innerHeight;
+      for (const { el, speed, isInterlude } of parallaxEls) {
+        const rect = el.getBoundingClientRect();
+        // ne calcule que si visible (perf)
+        if (rect.bottom < -200 || rect.top > vh + 200) continue;
+        const elCenter = rect.top + rect.height / 2;
+        const delta = elCenter - vh / 2;
+        const ty = -delta * speed;
+        el.style.transform = isInterlude
+          ? `translateY(${ty}px)`
+          : `scale(1.08) translateY(${ty}px)`;
+      }
+      parallaxRAF = null;
+    }
+    window.addEventListener('scroll', () => {
+      if (!parallaxRAF) parallaxRAF = requestAnimationFrame(updateParallax);
+    }, { passive: true });
+    updateParallax();
+
+    /* (3) CURSOR GLOW — suit la souris avec lerp (desktop uniquement) */
+    if (finePointer) {
+      const glow = document.createElement('div');
+      glow.className = 'cursor-glow';
+      document.body.appendChild(glow);
+
+      let mx = window.innerWidth / 2, my = window.innerHeight / 2;
+      let gx = mx, gy = my;
+      let glowActive = false;
+
+      window.addEventListener('mousemove', (e) => {
+        mx = e.clientX; my = e.clientY;
+        if (!glowActive) { glow.classList.add('is-active'); glowActive = true; }
+      }, { passive: true });
+
+      window.addEventListener('mouseleave', () => {
+        glow.classList.remove('is-active'); glowActive = false;
+      });
+
+      (function glowLoop() {
+        gx += (mx - gx) * 0.12;
+        gy += (my - gy) * 0.12;
+        glow.style.transform = `translate(${gx}px, ${gy}px)`;
+        requestAnimationFrame(glowLoop);
+      })();
+    }
+  }
+
+  /* (5) LIGHTBOX — preview agrandie au clic sur la progressive cover
+     (toujours actif, même en reduced-motion : c'est une fonctionnalité, pas un effet) */
+  (function initLightbox() {
+    const thumb = document.querySelector('.progressive__thumb');
+    if (!thumb) return;
+
+    const box = document.createElement('div');
+    box.className = 'lightbox';
+    box.innerHTML = `
+      <img src="${thumb.getAttribute('src')}" alt="bOYz Lyf£ — progressive cover (preview)" />
+      <div class="lightbox__hint">Clique pour fermer · Esc</div>
+    `;
+    document.body.appendChild(box);
+
+    function open() { box.classList.add('is-open'); document.body.style.overflow = 'hidden'; }
+    function close() { box.classList.remove('is-open'); document.body.style.overflow = ''; }
+
+    thumb.addEventListener('click', open);
+    thumb.style.cursor = 'zoom-in';
+    box.addEventListener('click', close);
+    document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+  })();
 
   /* ============================================================
      GATE — Stats privées aux fans
