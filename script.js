@@ -20,7 +20,7 @@
       'nav.stats': 'Stats', 'nav.presskit': 'Press kit', 'nav.contact': 'Contact',
 
       'hero.tagline.pre': '« À travers le monde, pour la culture » · ',
-      'hero.meta': 'Pre-save 01 — 06 — 2026 · Drop 05 — 06 — 2026',
+      'hero.meta': 'Pre-save 01 — 06 — 2026 · Drop 06 — 06 — 2026',
       'hero.sub': 'Feel Vlone · singer / producer / beatmaker · biel-bienne, suisse',
       'hero.cta': 'Écouter le projet',
       'hero.quote': '« comme une impression d\'être fait pour ça, un controle sur rien »',
@@ -56,6 +56,8 @@
 
       'gate.title.lock': 'Stats réservées aux fans.',
       'gate.sub.lock': 'Pour découvrir les chiffres derrière FEELV, suis-moi sur ta plateforme préférée. Tu pourras ensuite débloquer la section.',
+      'gate.avib.title.lock': 'Les A.VIB sont réservées aux fans.',
+      'gate.avib.sub.lock': 'Les analyses vibratoires de chaque morceau sont un contenu exclusif. Suis-moi sur ta plateforme préférée pour les débloquer.',
       'gate.follow': 'Suivre ↗',
       'gate.claim': 'Je suis déjà abonné →',
       'gate.note': '◇ Vérification automatique via Spotify (OAuth) — bientôt disponible.',
@@ -90,7 +92,7 @@
       'nav.stats': 'Stats', 'nav.presskit': 'Press kit', 'nav.contact': 'Contact',
 
       'hero.tagline.pre': '« Across the world, for the culture » · ',
-      'hero.meta': 'Pre-save 06.01.2026 · Drop 06.05.2026',
+      'hero.meta': 'Pre-save 06.01.2026 · Drop 06.06.2026',
       'hero.sub': 'Feel Vlone · singer / producer / beatmaker · biel-bienne, switzerland',
       'hero.cta': 'Listen to the project',
       'hero.quote': '« like the impression of being made for this, a control on nothing »',
@@ -126,6 +128,8 @@
 
       'gate.title.lock': 'Stats reserved for fans.',
       'gate.sub.lock': 'To discover the numbers behind FEELV, follow me on your favorite platform. You can then unlock this section.',
+      'gate.avib.title.lock': 'A.VIB reserved for fans.',
+      'gate.avib.sub.lock': 'The vibrational analyses of each track are exclusive content. Follow me on your favorite platform to unlock them.',
       'gate.follow': 'Follow ↗',
       'gate.claim': 'I\'m already subscribed →',
       'gate.note': '◇ Auto-verification via Spotify (OAuth) — coming soon.',
@@ -160,7 +164,7 @@
       'nav.stats': 'Stats', 'nav.presskit': 'Pressemappe', 'nav.contact': 'Kontakt',
 
       'hero.tagline.pre': '« Durch die Welt, für die Kultur » · ',
-      'hero.meta': 'Pre-save 01.06.2026 · Drop 05.06.2026',
+      'hero.meta': 'Pre-save 01.06.2026 · Drop 06.06.2026',
       'hero.sub': 'Feel Vlone · Sänger / Produzent / Beatmaker · biel-bienne, schweiz',
       'hero.cta': 'Das Projekt hören',
       'hero.quote': '« wie der Eindruck, dafür gemacht zu sein, eine Kontrolle über nichts »',
@@ -196,6 +200,8 @@
 
       'gate.title.lock': 'Stats für Fans reserviert.',
       'gate.sub.lock': 'Um die Zahlen hinter FEELV zu entdecken, folge mir auf deiner bevorzugten Plattform. Du kannst dann diesen Bereich freischalten.',
+      'gate.avib.title.lock': 'A.VIB für Fans reserviert.',
+      'gate.avib.sub.lock': 'Die Schwingungsanalysen jedes Tracks sind exklusiver Inhalt. Folge mir auf deiner bevorzugten Plattform, um sie freizuschalten.',
       'gate.follow': 'Folgen ↗',
       'gate.claim': 'Ich folge bereits →',
       'gate.note': '◇ Automatische Überprüfung via Spotify (OAuth) — bald verfügbar.',
@@ -492,92 +498,98 @@
      ============================================================ */
 
   const GATE_KEY = 'feelv_fan_platform';
+  const PLATFORMS = {
+    spotify: 'Spotify',
+    apple: 'Apple Music',
+    deezer: 'Deezer',
+  };
 
-  const gate = document.getElementById('stats-gate');
-  const content = document.getElementById('stats-content');
+  /* On collecte TOUS les portails de la page (#stats-gate, #avib-gate, …).
+     Ils partagent la même clé localStorage : être fan débloque tout d'un coup,
+     et le × dans le badge re-verrouille l'ensemble. */
+  const gateGroups = [];
+  document.querySelectorAll('.gate[id$="-gate"]').forEach((gate) => {
+    const content = document.getElementById(gate.id.replace(/-gate$/, '-content'));
+    if (!content) return;
+    gateGroups.push({
+      gate,
+      content,
+      panelLock: gate.querySelector('.gate__panel--lock'),
+      panelConfirm: gate.querySelector('.gate__panel--confirm'),
+      label: content.querySelector('#gate-platform-label, [data-gate-label]'),
+    });
+  });
 
-  if (gate && content) {
-    const panelLock = gate.querySelector('.gate__panel--lock');
-    const panelConfirm = gate.querySelector('.gate__panel--confirm');
-    const platformLabel = document.getElementById('gate-platform-label');
-
-    const PLATFORMS = {
-      spotify: 'Spotify',
-      apple: 'Apple Music',
-      deezer: 'Deezer',
-    };
-
-    function unlock(platform) {
+  if (gateGroups.length) {
+    function unlockAll(platform) {
       try { localStorage.setItem(GATE_KEY, platform); } catch (e) { }
-      if (platformLabel && PLATFORMS[platform]) {
-        platformLabel.textContent = PLATFORMS[platform];
-      }
-      gate.hidden = true;
-      content.hidden = false;
+      const name = PLATFORMS[platform];
+      gateGroups.forEach((g) => {
+        if (g.label && name) g.label.textContent = name;
+        g.gate.hidden = true;
+        g.content.hidden = false;
+      });
     }
 
-    function lock() {
+    function lockAll() {
       try { localStorage.removeItem(GATE_KEY); } catch (e) { }
-      gate.hidden = false;
-      content.hidden = true;
-      // remet l'étape "lock" au premier plan
-      panelLock.hidden = false;
-      panelConfirm.hidden = true;
-      gate.setAttribute('data-state', 'lock');
+      gateGroups.forEach((g) => {
+        g.gate.hidden = false;
+        g.content.hidden = true;
+        if (g.panelLock) g.panelLock.hidden = false;
+        if (g.panelConfirm) g.panelConfirm.hidden = true;
+        g.gate.setAttribute('data-state', 'lock');
+      });
     }
 
-    function showConfirm() {
-      panelLock.hidden = true;
-      panelConfirm.hidden = false;
-      gate.setAttribute('data-state', 'confirm');
+    function showConfirm(g) {
+      if (g.panelLock) g.panelLock.hidden = true;
+      if (g.panelConfirm) g.panelConfirm.hidden = false;
+      g.gate.setAttribute('data-state', 'confirm');
     }
 
-    function showLock() {
-      panelLock.hidden = false;
-      panelConfirm.hidden = true;
-      gate.setAttribute('data-state', 'lock');
+    function showLock(g) {
+      if (g.panelLock) g.panelLock.hidden = false;
+      if (g.panelConfirm) g.panelConfirm.hidden = true;
+      g.gate.setAttribute('data-state', 'lock');
     }
 
-    // 1) au chargement : si l'user a déjà claim, on unlock direct
+    // 1) au chargement : si l'user a déjà claim, on débloque tout
     let savedPlatform = null;
     try { savedPlatform = localStorage.getItem(GATE_KEY); } catch (e) { }
     if (savedPlatform && PLATFORMS[savedPlatform]) {
-      unlock(savedPlatform);
+      unlockAll(savedPlatform);
     }
 
-    // 2) clic sur "Je suis déjà abonné →"
-    gate.addEventListener('click', (e) => {
-      const claimBtn = e.target.closest('[data-action]');
-      if (claimBtn) {
-        e.preventDefault();
-        const action = claimBtn.dataset.action;
-        if (action === 'claim') showConfirm();
-        else if (action === 'back') showLock();
-        return;
-      }
-      // 3) clic sur une plateforme de confirmation
-      const confirmBtn = e.target.closest('[data-confirm]');
-
-      if (confirmBtn) {
-        const url = confirmBtn.getAttribute('href');
-
-        if (url) {
-          window.open(url, '_blank', 'noopener');
+    gateGroups.forEach((g) => {
+      // 2) clics dans le gate : claim / back / confirmation plateforme
+      g.gate.addEventListener('click', (e) => {
+        const actionBtn = e.target.closest('[data-action]');
+        if (actionBtn) {
+          e.preventDefault();
+          const action = actionBtn.dataset.action;
+          if (action === 'claim') showConfirm(g);
+          else if (action === 'back') showLock(g);
+          return;
         }
+        const confirmBtn = e.target.closest('[data-confirm]');
+        if (confirmBtn) {
+          e.preventDefault();
+          const platform = confirmBtn.dataset.confirm;
+          const url = confirmBtn.getAttribute('href');
+          if (url) window.open(url, '_blank', 'noopener');
+          setTimeout(() => unlockAll(platform), url ? 1500 : 0);
+        }
+      });
 
-        setTimeout(() => {
-          unlock(platform);
-        }, 1500);
-      }
-    });
-
-    // 4) clic sur le × dans le badge (revenir au gate)
-    content.addEventListener('click', (e) => {
-      const resetBtn = e.target.closest('[data-action="reset"]');
-      if (resetBtn) {
-        e.preventDefault();
-        lock();
-      }
+      // 3) clic sur le × dans le badge : re-verrouille tout
+      g.content.addEventListener('click', (e) => {
+        const resetBtn = e.target.closest('[data-action="reset"]');
+        if (resetBtn) {
+          e.preventDefault();
+          lockAll();
+        }
+      });
     });
   }
 

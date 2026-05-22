@@ -1,6 +1,6 @@
 # FEELV — bOYz Lyf£
 
-Site officiel de Feel Vlone (FEELV). Album **bOYz Lyf£** — pre-save **01.06.2026**, drop **05.06.2026**.
+Site officiel de Feel Vlone (FEELV). Album **bOYz Lyf£** — pre-save **01.06.2026**, drop **06.06.2026**.
 
 ## Stack
 
